@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <meta
+      name="description"
+      content="Edo Youth Impact Forum 2025 - Hack the Future Grant Registration"
+    />
+    <meta
+      name="keywords"
+      content="youth, grants, innovation, entrepreneurship, Edo, forum, EYIF"
+    />
+    <!-- Page Title -->
+    <title>EYIF 2025 | Hack the Future | Grant Registration</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/master.css" rel="stylesheet" />
+    <link href="css/color-switcher-design.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <style>
+      .category-card {
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+      }
+      .category-card.active {
+        border-color: #ffc000;
+        background-color: rgba(255, 192, 0, 0.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+      .category-card h5 {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .category-card p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 0;
+      }
+      .radio-input {
+        position: absolute;
+        opacity: 0;
+      }
+      .radio-indicator {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        height: 22px;
+        width: 22px;
+        border: 2px solid #e0e0e0;
+        border-radius: 50%;
+      }
+      .category-card.active .radio-indicator {
+        border-color: #ffc000;
+      }
+      .category-card.active .radio-indicator:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 3px;
+        left: 3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ffc000;
+      }
+      .grant-info-box {
+        background-color: #f9f9f9;
+        border-left: 4px solid #ffc000;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+      .grant-info-box h4 {
+        margin-bottom: 15px;
+        color: #222;
+      }
+      .grant-info-box ul {
+        padding-left: 20px;
+      }
+      .grant-info-box ul li {
+        margin-bottom: 8px;
+      }
+      .timeline {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .timeline-item {
+        text-align: center;
+        flex: 1;
+        position: relative;
+      }
+      .timeline-item:not(:last-child):after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e0e0e0;
+        z-index: 1;
+      }
+      .timeline-dot {
+        width: 30px;
+        height: 30px;
+        background-color: #ffc000;
+        border-radius: 50%;
+        margin: 0 auto 10px;
+        position: relative;
+        z-index: 2;
+      }
+      .timeline-date {
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .timeline-label {
+        font-size: 12px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Cursor Animation -->
+      <div class="circle"></div>
+      <div class="circle-follow"></div>
+
+      <!-- Preloader -->
+      <div class="preloader"></div>
+
+      <!-- Main Header-->
+      <header class="main-header header-style-one">
+        <!-- Header Main Box -->
+        <div class="auto-container">
+          <div class="main-box">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="index.html"
+                  ><img src="images/logo.svg" alt="Logo" title="EYIF"
+                /></a>
+              </div>
+            </div>
+
+            <div class="header-navbar">
+              <!--Nav Box-->
+              <div class="nav-outer">
+                <nav class="nav main-menu">
+                  <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="current">
+                      <a href="grant-registration.html">Grants</a>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- Main Menu End-->
+
+              <!-- Outer Box -->
+              <div class="outer-box">
+                <!-- Search Btn -->
+                <button class="ui-btn search-btn">
+                  <i class="icon flaticon-search"></i>
+                </button>
+
+                <!-- Hidden Bar -->
+                <button class="ui-btn toggle-hidden-bar">
+                  <i class="icon flaticon-menu-2"></i>
+                </button>
+
+                <!-- Btn Box -->
+                <div class="btn-box">
+                  <a
+                    href="contact.html"
+                    class="theme-btn btn-style-one light-bg"
+                    ><span class="btn-title">Register Now</span></a
+                  >
+                </div>
+
+                <!-- Mobile Nav toggler -->
+                <div class="mobile-nav-toggler"><i class="fa fa-bars"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+
+          <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+          <nav class="menu-box">
+            <div class="upper-box">
+              <div class="logo-box">
+                <div class="nav-logo light">
+                  <a href="index.html"
+                    ><img src="images/logo-2.svg" alt="Logo"
+                  /></a>
+                </div>
+                <div class="nav-logo dark">
+                  <a href="index.html"
+                    ><img src="images/logo.svg" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+              <div class="close-btn"><i class="icon fa fa-times"></i></div>
+            </div>
+
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+            <ul class="contact-list-one">
+              <li>
+                <i class="icon lnr-icon-phone-handset"></i>
+                <span class="title">Call Us</span>
+                <div class="text">
+                  <a href="tel:+2348000000000">+234 800 000 0000</a>
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-envelope1"></i>
+                <span class="title">Send Email</span>
+                <div class="text">
+                  <a href="mailto:info@edosyouthimpactforum.com"
+                    >info@edosyouthimpactforum.com</a
+                  >
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-map-marker"></i>
+                <span class="title">Address</span>
+                <div class="text">
+                  Victor Uwaifo Creative Hub, Benin City, Edo State
+                </div>
+              </li>
+            </ul>
+
+            <ul class="social-links">
+              <li>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+
+        <!-- Hidden bar back drop -->
+        <div class="hidden-bar-back-drop"></div>
+
+        <!-- Hidden Bar -->
+        <section class="hidden-bar">
+          <div class="inner-box">
+            <div class="upper-box">
+              <div class="logo-box">
+                <div class="nav-logo light">
+                  <a href="index.html"
+                    ><img src="images/logo-2.svg" alt="Logo"
+                  /></a>
+                </div>
+                <div class="nav-logo dark">
+                  <a href="index.html"
+                    ><img src="images/logo.svg" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+              <div class="close-btn"><i class="icon fa fa-times"></i></div>
+            </div>
+
+            <div class="text-box">
+              <h4 class="title">Empowering Youth for a Transformed Future</h4>
+              <div class="text">
+                The Edo Youth Impact Forum (EYIF) is designed to inspire and
+                equip young people with practical skills, entrepreneurial
+                thinking, and civic awareness. Join us to be part of this
+                transformative movement.
+              </div>
+            </div>
+
+            <ul class="contact-list-one">
+              <li>
+                <i class="icon lnr-icon-phone-handset"></i>
+                <span class="title">Call Us</span>
+                <div class="text">
+                  <a href="tel:+2348000000000">+234 800 000 0000</a>
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-envelope1"></i>
+                <span class="title">Send Email</span>
+                <div class="text">
+                  <a href="mailto:info@edosyouthimpactforum.com"
+                    >info@edosyouthimpactforum.com</a
+                  >
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-map-marker"></i>
+                <span class="title">Address</span>
+                <div class="text">
+                  Victor Uwaifo Creative Hub, <br />
+                  Benin City, Edo State.
+                </div>
+              </li>
+            </ul>
+
+            <ul class="social-links">
+              <li>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!--End Hidden Bar -->
+
+        <!-- Header Search -->
+        <div class="search-popup">
+          <span class="search-back-drop"></span>
+          <button class="close-search">
+            <span class="fa fa-times"></span>
+          </button>
+
+          <div class="search-inner">
+            <form method="post" action="#">
+              <div class="form-group">
+                <input
+                  type="search"
+                  name="search-field"
+                  value=""
+                  placeholder="Search..."
+                  required=""
+                />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End Header Search -->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+          <div class="auto-container">
+            <div class="inner-container">
+              <!--Logo-->
+              <div class="logo-box">
+                <div class="logo light">
+                  <a href="index.html" title=""
+                    ><img src="images/logo-2.svg" alt="Logo"
+                  /></a>
+                </div>
+                <div class="logo dark">
+                  <a href="index.html" title=""
+                    ><img src="images/logo.svg" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+
+              <!--Right Col-->
+              <div class="nav-outer">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                  <div class="navbar-collapse show collapse clearfix">
+                    <ul class="navigation clearfix">
+                      <!--Keep This Empty / Menu will come through Javascript-->
+                    </ul>
+                  </div>
+                </nav>
+                <!-- Main Menu End-->
+
+                <!--Mobile Navigation Toggler-->
+                <div class="mobile-nav-toggler">
+                  <i class="fa fa-bars"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Sticky Menu -->
+      </header>
+      <!--End Main Header -->
+
+      <!-- Page Banner Section -->
+      <section class="page-banner" style="padding-top: 15rem">
+        <div
+          class="bg bg-image"
+          style="background-image: url(images/background/4.jpg)"
+        ></div>
+        <div class="auto-container">
+          <div class="content-box">
+            <h1 class="title text-white text-reveal-anim">Hack the Future</h1>
+            <ul class="bread-crumb">
+              <li><a href="index.html">Home</a></li>
+              <li>Grant Registration</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--End Page Banner Section -->
+
+      <!-- Contact Section -->
+      <section class="contact-section">
+        <div class="auto-container">
+          <div class="row">
+            <!-- Content Column -->
+            <div class="content-column col-lg-6 col-md-12 col-sm-12">
+              <div class="inner-column">
+                <div class="sec-title">
+                  <span class="sub-title">Grant Application</span>
+                  <h2 class="text-reveal-anim text-white">
+                    Reimagining Edo's Future: <br />Homegrown Solutions for a
+                    Thriving Tomorrow
+                  </h2>
+                </div>
+
+                <div class="grant-info-box">
+                  <h4>Grant Details</h4>
+                  <ul>
+                    <li>
+                      <strong>Prize:</strong> ₦2,000,000 pre-seed capital per
+                      winner
+                    </li>
+                    <li><strong>Total Prize Fund:</strong> ₦20,000,000</li>
+                    <li><strong>Number of Winners:</strong> 10</li>
+                  </ul>
+                </div>
+
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date text-white">May 5, 2025</div>
+                    <div class="timeline-label text-white">
+                      Applications Open
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date text-white">May 24, 2025</div>
+                    <div class="timeline-label text-white">
+                      Submission Deadline
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date text-white">May 25-June 4</div>
+                    <div class="timeline-label text-white">
+                      Incubation Period
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date text-white">July 2, 2025</div>
+                    <div class="timeline-label text-white">
+                      Winners Announced
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-reveal-anim text-white">
+                  Are you an innovator with a solution that can transform Edo
+                  State? We're looking for creative ideas that address
+                  challenges in key sectors. Submit your proposal today for a
+                  chance to win ₦2,000,000 in pre-seed funding and mentorship
+                  support.
+                </div>
+              </div>
+            </div>
+
+            <!-- Form Column -->
+            <div class="form-column col-lg-6 col-md-12 col-sm-12">
+              <div class="inner-column">
+                <div class="contact-form">
+                  <form
+                    method="post"
+                    action="#"
+                    id="grant-registration-form"
+                    onsubmit="showSuccessMessage(event)"
+                  >
+                    <div class="form-group">
+                      <label>Full Name</label>
+                      <input
+                        type="text"
+                        name="fullName"
+                        placeholder="Your Full Name"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label>Email Address</label>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email Address"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label>Phone Number</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Your Phone Number"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label>Startup/Idea Name</label>
+                      <input
+                        type="text"
+                        name="startupName"
+                        placeholder="Name of Your Startup or Idea"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label>Select Category</label>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div
+                            class="category-card"
+                            onclick="selectCategory(this, 'education')"
+                          >
+                            <input
+                              type="radio"
+                              name="category"
+                              value="education"
+                              class="radio-input"
+                              required
+                            />
+                            <div class="radio-indicator"></div>
+                            <h5>Basic Education</h5>
+                            <p>
+                              Solutions for learning, teaching, and educational
+                              access
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div
+                            class="category-card"
+                            onclick="selectCategory(this, 'agriculture')"
+                          >
+                            <input
+                              type="radio"
+                              name="category"
+                              value="agriculture"
+                              class="radio-input"
+                            />
+                            <div class="radio-indicator"></div>
+                            <h5>Agriculture & Food Security</h5>
+                            <p>
+                              Innovations in farming, food production, and
+                              distribution
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div
+                            class="category-card"
+                            onclick="selectCategory(this, 'environment')"
+                          >
+                            <input
+                              type="radio"
+                              name="category"
+                              value="environment"
+                              class="radio-input"
+                            />
+                            <div class="radio-indicator"></div>
+                            <h5>Waste, Environment & Clean Energy</h5>
+                            <p>
+                              Sustainable solutions for environmental challenges
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div
+                            class="category-card"
+                            onclick="selectCategory(this, 'culture')"
+                          >
+                            <input
+                              type="radio"
+                              name="category"
+                              value="culture"
+                              class="radio-input"
+                            />
+                            <div class="radio-indicator"></div>
+                            <h5>Culture, Arts & Tourism</h5>
+                            <p>
+                              Creative solutions celebrating heritage and
+                              tourism
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div
+                            class="category-card"
+                            onclick="selectCategory(this, 'health')"
+                          >
+                            <input
+                              type="radio"
+                              name="category"
+                              value="health"
+                              class="radio-input"
+                            />
+                            <div class="radio-indicator"></div>
+                            <h5>Youth Well-being & Mental Health</h5>
+                            <p>
+                              Solutions for health, wellness, and mental support
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div
+                            class="category-card"
+                            onclick="selectCategory(this, 'skills')"
+                          >
+                            <input
+                              type="radio"
+                              name="category"
+                              value="skills"
+                              class="radio-input"
+                            />
+                            <div class="radio-indicator"></div>
+                            <h5>Skills, Work & Entrepreneurship</h5>
+                            <p>
+                              Innovations in job creation and skills development
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div
+                            class="category-card"
+                            onclick="selectCategory(this, 'transport')"
+                          >
+                            <input
+                              type="radio"
+                              name="category"
+                              value="transport"
+                              class="radio-input"
+                            />
+                            <div class="radio-indicator"></div>
+                            <h5>Transportation & Infrastructure</h5>
+                            <p>
+                              Solutions for mobility and infrastructure
+                              challenges
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Idea Summary</label>
+                      <textarea
+                        name="ideaSummary"
+                        placeholder="Provide a detailed summary of your idea or concept (max 500 words)"
+                        rows="4"
+                        required
+                      ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label>What Problem Does Your Solution Address?</label>
+                      <textarea
+                        name="problemStatement"
+                        placeholder="Describe the problem you're solving"
+                        rows="3"
+                        required
+                      ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label>How Will the Grant Funding Be Used?</label>
+                      <textarea
+                        name="fundUsage"
+                        placeholder="Explain how you would use the ₦2,000,000 funding"
+                        rows="3"
+                        required
+                      ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <button
+                        class="theme-btn btn-style-one"
+                        type="submit"
+                        name="submit-form"
+                      >
+                        <span class="btn-title">Submit Application</span>
+                      </button>
+                    </div>
+
+                    <div
+                      id="success-message"
+                      style="
+                        display: none;
+                        margin-top: 20px;
+                        padding: 15px;
+                        background-color: #dff0d8;
+                        border-left: 4px solid #5cb85c;
+                        color: #3c763d;
+                      "
+                    >
+                      <p style="margin: 0">
+                        <strong>Thank you for your application!</strong>
+                      </p>
+                      <p style="margin-top: 5px">
+                        Your submission has been received. We will review your
+                        application and contact you soon.
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--End Contact Section -->
+
+      <!-- Main Footer -->
+      <footer class="main-footer footer-style-three">
+        <div class="bg bg-pattern-10"></div>
+        <div class="icon-fourteen bounce-x"></div>
+        <div class="icon-fifteen"></div>
+        <div class="icon-sixteen"></div>
+
+        <!-- Widgets Section -->
+        <div class="widgets-section">
+          <div class="auto-container">
+            <div class="row">
+              <!-- Footer Column -->
+              <div class="footer-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
+                <div class="footer-widget about-widget">
+                  <div class="widget-content">
+                    <div class="icon-star"></div>
+                    <h1 class="title">Let's Connect.</h1>
+                    <div class="text">
+                      The Edo Youth Impact Forum (EYIF) is a platform designed
+                      to inspire, equip, and empower young people with practical
+                      skills, entrepreneurial thinking, and civic awareness for
+                      a transformed future.
+                    </div>
+                    <ul class="social-icon-two light">
+                      <li>
+                        <a href="contact.html#"
+                          ><i class="fab fa-facebook"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="contact.html#"
+                          ><i class="fab fa-twitter"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="contact.html#"
+                          ><i class="fab fa-instagram"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="contact.html#"
+                          ><i class="fab fa-pinterest-p"></i
+                        ></a>
+                      </li>
+                    </ul>
+                    <div class="copyright-text">
+                      © Copyright 2025 All Rights Reserved by
+                      <a
+                        href="https://themeforest.net/user/expert-themes"
+                        target="_blank"
+                        >Expert Theme</a
+                      >.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer COlumn -->
+              <div class="footer-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
+                <div class="footer-widget post-widget">
+                  <div class="widget-content">
+                    <div class="swiper post-swiper">
+                      <div class="swiper-wrapper"></div>
+                    </div>
+                    <div class="nav-box">
+                      <div class="swiper-button-prev">
+                        <span class="icon fa fa-arrow-left"></span>
+                      </div>
+                      <div class="swiper-button-next">
+                        <span class="icon fa fa-arrow-right"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-widget newsletter-widget">
+                  <h3 class="widget-title">Newsletter</h3>
+                  <div class="widget-content">
+                    <div class="text">
+                      Subscribe to our newsletter & keep up with all the latest
+                      events.
+                    </div>
+                    <div class="newsletter-form-two">
+                      <form>
+                        <div class="form-group" style="display: flex; gap: 10px">
+                          <input
+                            type="email"
+                            name="email"
+                            class="email"
+                            value=""
+                            placeholder="Subscribe Email ......"
+                            required=""
+                          />
+                          <button
+                            type="submit"
+                            class="theme-btn btn-style-one bg-yellow"
+                          >
+                            <span class="btn-title">Subscribe</span>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-widget contact-widget">
+                  <h3 class="widget-title">Information</h3>
+                  <div class="widget-content">
+                    <ul class="contact-list-three light">
+                      <li class="location">
+                        <i class="fa fa-map-marker-alt"></i>Victor Uwaifo
+                        Creative Hub, Airport Road, Benin City, Edo State,
+                        Nigeria.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="widget-content" style="margin-top: 20px">
+                    <ul
+                      class="contact-list-three light"
+                      style="display: flex; flex-direction: column; gap: 10px"
+                    >
+                      <li>
+                        <div class="icon-box">
+                          <i class="fa fa-phone"></i>
+                          <div class="h5">Contact No.</div>
+                        </div>
+                        <a href="tel:+2348000000000">+234 800 000 0000</a>
+                      </li>
+
+                      <li>
+                        <div class="icon-box">
+                          <i class="fa fa-envelope"></i>
+                          <div class="h5">Email Address</div>
+                        </div>
+                        <a href="mailto:info@edosyouthimpactforum.com"
+                          >info@edosyouthimpactforum.com</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--End Main Footer -->
+    </div>
+    <!-- End Page Wrapper -->
+
+    <!-- Back To Top Start -->
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <!-- back to top end -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/jquery.countdown.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/lightcase.js"></script>
+    <script src="js/swipper.min.js"></script>
+    <script src="js/backtotop.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/splitType.js"></script>
+    <script src="js/SplitText.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Form Handler -->
+    <script src="js/form-handler.js"></script>
+    <!-- Color Setting -->
+    <script src="js/color-settings.js"></script>
+
+    <script>
+      function selectCategory(card, category) {
+        // First, remove active class from all cards
+        document.querySelectorAll(".category-card").forEach(function (el) {
+          el.classList.remove("active");
+        });
+
+        // Then, add active class to the clicked card
+        card.classList.add("active");
+
+        // Set the radio input as checked
+        card.querySelector(".radio-input").checked = true;
+      }
+
+      function showSuccessMessage(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Hide the form
+        document.getElementById("grant-registration-form").style.opacity =
+          "0.5";
+
+        // Show the success message
+        document.getElementById("success-message").style.display = "block";
+
+        // Scroll to the success message
+        document
+          .getElementById("success-message")
+          .scrollIntoView({ behavior: "smooth" });
+
+        // Reset the form after a delay
+        setTimeout(function () {
+          document.getElementById("grant-registration-form").reset();
+          document.querySelectorAll(".category-card").forEach(function (el) {
+            el.classList.remove("active");
+          });
+          document.getElementById("grant-registration-form").style.opacity =
+            "1";
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
