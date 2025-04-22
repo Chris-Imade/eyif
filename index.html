@@ -103,10 +103,17 @@
             <div class="logo-box">
               <div class="logo">
                 <a href="index.html"
-                  ><img src="images/logo.svg" alt="Logo" title="EYIF"
+                  ><img src="images/logo.png" alt="Logo" class="logo__image" title="EYIF"
                 /></a>
               </div>
             </div>
+
+            <style>
+              .logo > a > img {
+                width: 50% !important;
+                display: flex;
+              }
+            </style>
 
             <div class="header-navbar">
               <!--Nav Box-->
@@ -160,12 +167,12 @@
               <div class="logo-box">
                 <div class="nav-logo light">
                   <a href="index.html"
-                    ><img src="images/logo-2.svg" alt="Logo"
+                    ><img src="images/logo-2.png" alt="Logo"
                   /></a>
                 </div>
                 <div class="nav-logo dark">
                   <a href="index.html"
-                    ><img src="images/logo.svg" alt="Logo"
+                    ><img src="images/logo.png" alt="Logo"
                   /></a>
                 </div>
               </div>
@@ -250,12 +257,12 @@
               <div class="logo-box">
                 <div class="logo light">
                   <a href="index.html#" title=""
-                    ><img src="images/logo-2.svg" alt="Logo"
+                    ><img src="images/logo-2.png" alt="Logo"
                   /></a>
                 </div>
                 <div class="logo dark">
                   <a href="index.html#" title=""
-                    ><img src="images/logo.svg" alt="Logo"
+                    ><img src="images/logo.png" alt="Logo"
                   /></a>
                 </div>
               </div>
@@ -294,12 +301,12 @@
             <div class="logo-box">
               <div class="nav-logo light">
                 <a href="index.html"
-                  ><img src="images/logo-2.svg" alt="Logo"
+                  ><img src="images/logo-2.png" alt="Logo"
                 /></a>
               </div>
               <div class="nav-logo dark">
                 <a href="index.html"
-                  ><img src="images/logo.svg" alt="Logo"
+                  ><img src="images/logo.png" alt="Logo"
                 /></a>
               </div>
             </div>
@@ -380,20 +387,27 @@
                   data-wow-delay="2300ms"
                 />
                 <img
-                  src="images/banner/user-2.png"
+                  src="images/banner/person-2.avif"
                   alt="Image"
-                  class="wow fadeInRight"
+                  class="wow fadeInRight custom__image"
                   data-wow-delay="2500ms"
                 />
                 <img
-                  src="images/banner/user-3.png"
+                  src="images/banner/person-1.jpg"
                   alt="Image"
-                  class="wow fadeInRight"
+                  class="wow fadeInRight custom__image"
                   data-wow-delay="2800ms"
                 />
               </span>
               <span>Impact Forum</span>
             </h1>
+            <style>
+              .custom__image {
+                object-fit: cover !important;
+                width: 92px;
+                height: 92px;
+              }
+            </style>
             <div class="location-box wow fadeInRight" data-wow-delay="3100ms">
               <div class="text">
                 Benin City <i class="icon fa fa-long-arrow-right"></i> <br />
@@ -425,7 +439,11 @@
             <div class="image-box wow fadeInUp">
               <div class="image-outer">
                 <figure class="image overlay-anim">
-                  <img src="images/resource/banner-main.jpg" style="width: 890px; height: 415px; object-fit: cover;" alt="Image" />
+                  <img
+                    src="images/resource/banner-main.jpg"
+                    style="width: 890px; height: 415px; object-fit: cover"
+                    alt="Image"
+                  />
                 </figure>
                 <div class="icon-nineteen"></div>
                 <div class="icon-twenty"></div>
@@ -444,7 +462,11 @@
             <div class="image-box">
               <div class="image-outer">
                 <figure class="image overlay-anim reveal">
-                  <img src="images/resource/about1-2.jpg" alt="Image" style="width: 410px; height: 518px;" />
+                  <img
+                    src="images/resource/about1-2.jpg"
+                    alt="Image"
+                    style="width: 410px; height: 518px"
+                  />
                 </figure>
                 <div class="icon-twentyfour"></div>
               </div>
@@ -1371,8 +1393,8 @@
           ></div>
           <div class="image-box">
             <div class="image-outer">
-              <figure class="image">
-                <img src="images/resource/video1-1.png" alt="Image" />
+              <figure class="image" style="width: 575px; height: 575px;">
+                <img src="images/resource/we-blacks.jpg" alt="Image" style="object-fit: cover;" />
               </figure>
             </div>
           </div>
@@ -1505,7 +1527,7 @@
                   <div class="widget-content">
                     <div class="logo">
                       <a href="index.html"
-                        ><img src="images/logo.svg" alt="Logo"
+                        ><img src="images/logo.png" alt="Logo"
                       /></a>
                     </div>
                     <div class="text">
