@@ -126,21 +126,26 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 30px;
+        position: relative;
+      }
+      .timeline:before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e0e0e0;
+        z-index: 1;
       }
       .timeline-item {
         text-align: center;
         flex: 1;
         position: relative;
+        z-index: 2;
       }
       .timeline-item:not(:last-child):after {
-        content: "";
-        position: absolute;
-        top: 15px;
-        right: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #e0e0e0;
-        z-index: 1;
+        display: none;
       }
       .timeline-dot {
         width: 30px;
@@ -158,6 +163,28 @@
       .timeline-label {
         font-size: 12px;
         color: #666;
+      }
+      .page-banner .content-box .title {
+        line-height: 1.2;
+        margin-bottom: 15px;
+      }
+      .page-banner .content-box .title br {
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+      }
+      @media (max-width: 767px) {
+        .page-banner .content-box .title {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+        .page-banner {
+          padding-top: 8rem !important;
+          padding-bottom: 3rem !important;
+        }
+        .page-banner .content-box {
+          margin-bottom: 0;
+        }
       }
     </style>
   </head>
@@ -201,11 +228,6 @@
 
               <!-- Outer Box -->
               <div class="outer-box">
-                <!-- Search Btn -->
-                <button class="ui-btn search-btn">
-                  <i class="icon flaticon-search"></i>
-                </button>
-
                 <!-- Hidden Bar -->
                 <button class="ui-btn toggle-hidden-bar">
                   <i class="icon flaticon-menu-2"></i>
@@ -442,12 +464,14 @@
       <!-- Page Banner Section -->
       <section class="page-banner" style="padding-top: 15rem">
         <div
-          class="bg bg-image"
-          style="background-image: url(images/background/4.jpg)"
+          class="bg"
+          style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)"
         ></div>
         <div class="auto-container">
           <div class="content-box">
-            <h1 class="title text-white text-reveal-anim">Hack the Future</h1>
+            <h1 class="title text-white text-reveal-anim">
+              Innovate Edo<br />Shape the Future
+            </h1>
             <ul class="bread-crumb">
               <li><a href="index.html">Home</a></li>
               <li>Grant Registration</li>
@@ -458,11 +482,11 @@
       <!--End Page Banner Section -->
 
       <!-- Contact Section -->
-      <section class="contact-section">
+      <section class="contact-section" style="margin-top: -9rem;">
         <div class="auto-container">
           <div class="row">
             <!-- Content Column -->
-            <div class="content-column col-lg-6 col-md-12 col-sm-12">
+            <div class="content-column col-lg-12 col-md-12 col-sm-12">
               <div class="inner-column">
                 <div class="sec-title">
                   <span class="sub-title">Grant Application</span>
@@ -476,32 +500,34 @@
                   <h4>Grant Details</h4>
                   <ul>
                     <li>
-                      <strong>Prize:</strong> ₦2,000,000 pre-seed capital per
+                      <strong>Prize:</strong> ₦4,000,000 pre-seed capital per
                       winner
                     </li>
                     <li><strong>Total Prize Fund:</strong> ₦20,000,000</li>
-                    <li><strong>Number of Winners:</strong> 10</li>
+                    <li><strong>Number of Winners:</strong>5</li>
                   </ul>
                 </div>
 
                 <div class="timeline">
                   <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date text-white">May 5, 2025</div>
+                    <div class="timeline-date text-white">May 29th, 2025</div>
                     <div class="timeline-label text-white">
                       Applications Open
                     </div>
                   </div>
                   <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date text-white">May 24, 2025</div>
+                    <div class="timeline-date text-white">June 21st, 2025</div>
                     <div class="timeline-label text-white">
                       Submission Deadline
                     </div>
                   </div>
                   <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date text-white">May 25-June 4</div>
+                    <div class="timeline-date text-white">
+                      June 21st - July 1st
+                    </div>
                     <div class="timeline-label text-white">
                       Incubation Period
                     </div>
@@ -526,7 +552,10 @@
             </div>
 
             <!-- Form Column -->
-            <div class="form-column col-lg-6 col-md-12 col-sm-12">
+            <div
+              class="form-column col-lg-12 col-md-12 col-sm-12"
+              style="margin-top: 50px"
+            >
               <div class="inner-column">
                 <div class="contact-form">
                   <form
@@ -750,26 +779,6 @@
                       >
                         <span class="btn-title">Submit Application</span>
                       </button>
-                    </div>
-
-                    <div
-                      id="success-message"
-                      style="
-                        display: none;
-                        margin-top: 20px;
-                        padding: 15px;
-                        background-color: #dff0d8;
-                        border-left: 4px solid #5cb85c;
-                        color: #3c763d;
-                      "
-                    >
-                      <p style="margin: 0">
-                        <strong>Thank you for your application!</strong>
-                      </p>
-                      <p style="margin-top: 5px">
-                        Your submission has been received. We will review your
-                        application and contact you soon.
-                      </p>
                     </div>
                   </form>
                 </div>
