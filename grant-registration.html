@@ -612,12 +612,12 @@
                         <div class="col-md-6">
                           <div
                             class="category-card"
-                            onclick="selectCategory(this, 'education')"
+                            onclick="selectCategory(this, 'basic-education')"
                           >
                             <input
                               type="radio"
                               name="category"
-                              value="education"
+                              value="basic-education"
                               class="radio-input"
                               required
                             />
@@ -632,12 +632,12 @@
                         <div class="col-md-6">
                           <div
                             class="category-card"
-                            onclick="selectCategory(this, 'agriculture')"
+                            onclick="selectCategory(this, 'agriculture-food')"
                           >
                             <input
                               type="radio"
                               name="category"
-                              value="agriculture"
+                              value="agriculture-food"
                               class="radio-input"
                             />
                             <div class="radio-indicator"></div>
@@ -651,12 +651,12 @@
                         <div class="col-md-6">
                           <div
                             class="category-card"
-                            onclick="selectCategory(this, 'environment')"
+                            onclick="selectCategory(this, 'waste-environment')"
                           >
                             <input
                               type="radio"
                               name="category"
-                              value="environment"
+                              value="waste-environment"
                               class="radio-input"
                             />
                             <div class="radio-indicator"></div>
@@ -669,12 +669,12 @@
                         <div class="col-md-6">
                           <div
                             class="category-card"
-                            onclick="selectCategory(this, 'culture')"
+                            onclick="selectCategory(this, 'culture-arts')"
                           >
                             <input
                               type="radio"
                               name="category"
-                              value="culture"
+                              value="culture-arts"
                               class="radio-input"
                             />
                             <div class="radio-indicator"></div>
@@ -688,30 +688,12 @@
                         <div class="col-md-6">
                           <div
                             class="category-card"
-                            onclick="selectCategory(this, 'health')"
+                            onclick="selectCategory(this, 'skills-work')"
                           >
                             <input
                               type="radio"
                               name="category"
-                              value="health"
-                              class="radio-input"
-                            />
-                            <div class="radio-indicator"></div>
-                            <h5>Youth Well-being & Mental Health</h5>
-                            <p>
-                              Solutions for health, wellness, and mental support
-                            </p>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div
-                            class="category-card"
-                            onclick="selectCategory(this, 'skills')"
-                          >
-                            <input
-                              type="radio"
-                              name="category"
-                              value="skills"
+                              value="skills-work"
                               class="radio-input"
                             />
                             <div class="radio-indicator"></div>
@@ -724,20 +706,25 @@
                         <div class="col-md-6">
                           <div
                             class="category-card"
-                            onclick="selectCategory(this, 'transport')"
+                            onclick="selectCategory(this, 'other')"
                           >
                             <input
                               type="radio"
                               name="category"
-                              value="transport"
+                              value="other"
                               class="radio-input"
                             />
                             <div class="radio-indicator"></div>
-                            <h5>Transportation & Infrastructure</h5>
-                            <p>
-                              Solutions for mobility and infrastructure
-                              challenges
-                            </p>
+                            <h5>Other Category</h5>
+                            <p>Specify a category not listed above</p>
+                            <input
+                              type="text"
+                              name="otherCategory"
+                              placeholder="Please specify"
+                              class="form-control mt-3"
+                              style="display: none"
+                              id="otherCategoryInput"
+                            />
                           </div>
                         </div>
                       </div>
@@ -981,6 +968,12 @@
         // First, remove active class from all cards
         document.querySelectorAll(".category-card").forEach(function (el) {
           el.classList.remove("active");
+          // Hide the 'otherCategoryInput' when another category is selected
+          const otherInput = el.querySelector("#otherCategoryInput");
+          if (otherInput) {
+            otherInput.style.display = "none";
+            otherInput.removeAttribute("required");
+          }
         });
 
         // Then, add active class to the clicked card
@@ -988,6 +981,15 @@
 
         // Set the radio input as checked
         card.querySelector(".radio-input").checked = true;
+
+        // Show 'otherCategoryInput' if 'other' category is selected
+        if (category === "other") {
+          const otherInput = card.querySelector("#otherCategoryInput");
+          if (otherInput) {
+            otherInput.style.display = "block";
+            otherInput.setAttribute("required", "required");
+          }
+        }
       }
 
       function showSuccessMessage(event) {
