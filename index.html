@@ -53,6 +53,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/master.css" rel="stylesheet" />
     <link href="css/color-switcher-design.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <style>
       .footer-flex {
@@ -112,6 +113,164 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      .category-card {
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+      }
+      .category-card.active {
+        border-color: #ffc000;
+        background-color: rgba(255, 192, 0, 0.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+      .category-card h5 {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .category-card p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 0;
+      }
+      .radio-input {
+        position: absolute;
+        opacity: 0;
+      }
+      .radio-indicator {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        height: 22px;
+        width: 22px;
+        border: 2px solid #e0e0e0;
+        border-radius: 50%;
+      }
+      .category-card.active .radio-indicator {
+        border-color: #ffc000;
+      }
+      .category-card.active .radio-indicator:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 3px;
+        left: 3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ffc000;
+      }
+      .grant-info-box {
+        background-color: #f9f9f9;
+        border-left: 4px solid #ffc000;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+      .grant-info-box h4 {
+        margin-bottom: 15px;
+        color: #222;
+      }
+      .grant-info-box ul {
+        padding-left: 20px;
+      }
+      .grant-info-box ul li {
+        margin-bottom: 8px;
+      }
+      .timeline {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        position: relative;
+      }
+      .timeline:before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e0e0e0;
+        z-index: 1;
+      }
+      .timeline-item {
+        text-align: center;
+        flex: 1;
+        position: relative;
+        z-index: 2;
+      }
+      .timeline-item:not(:last-child):after {
+        display: none;
+      }
+      .timeline-dot {
+        width: 30px;
+        height: 30px;
+        background-color: #ffc000;
+        border-radius: 50%;
+        margin: 0 auto 10px;
+        position: relative;
+        z-index: 2;
+      }
+      .timeline-date {
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .timeline-label {
+        font-size: 12px;
+        color: #666;
+      }
+      .page-banner .content-box .title {
+        line-height: 1.2;
+        margin-bottom: 15px;
+      }
+      .page-banner .content-box .title br {
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+      }
+      @media (max-width: 767px) {
+        .page-banner .content-box .title {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+        .page-banner {
+          padding-top: 8rem !important;
+          padding-bottom: 3rem !important;
+        }
+        .page-banner .content-box {
+          margin-bottom: 0;
+        }
+      }
+
+      /* Filter Buttons for Speakers Section */
+      .filter-buttons {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .filter-buttons .btn {
+        background-color: #f0f0f0;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .filter-buttons .btn:hover {
+        background-color: #e0e0e0;
+      }
+
+      .filter-buttons .btn.active {
+        background-color: #ffc000;
+        color: #fff;
+        border-color: #ffc000;
       }
     </style>
   </head>
@@ -674,10 +833,20 @@
               For Youth Empowerment
             </h2>
           </div>
+
+          <div class="filter-buttons text-center mb-5">
+            <button class="btn btn-primary active" data-filter="all">All Speakers</button>
+            <button class="btn btn-primary" data-filter="keynote-speaker">Keynote Speakers</button>
+            <button class="btn btn-primary" data-filter="fireside-chat-speaker">Fireside Chat Speakers</button>
+            <button class="btn btn-primary" data-filter="panelist">Panelists</button>
+            <button class="btn btn-primary" data-filter="masterclass-facilitator">Masterclass Facilitators</button>
+          </div>
+
           <div class="row">
             <!-- Speaker Block -->
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp animated"
+              data-category="keynote-speaker"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -715,6 +884,7 @@
             <!-- Speaker Block -->
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
+              data-category="keynote-speaker"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -742,7 +912,7 @@
                 </div>
                 <div class="info-box">
                   <h4 class="name" style="font-size: 16px">
-                    <a>MINISTER OF YOUTH DEVELOPMENT</a>
+                    <a>AYODELE OLAWANDE (MINISTER OF YOUTH DEVELOPMENT)</a>
                   </h4>
                   <span class="designation">Keynote Speaker</span>
                 </div>
@@ -753,6 +923,7 @@
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
               data-wow-delay="200ms"
+              data-category="fireside-chat-speaker"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -786,6 +957,7 @@
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
               data-wow-delay="600ms"
+              data-category="panelist"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -819,6 +991,7 @@
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
               data-wow-delay="600ms"
+              data-category="panelist"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -858,6 +1031,7 @@
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
               data-wow-delay="200ms"
+              data-category="masterclass-facilitator"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -891,6 +1065,7 @@
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
               data-wow-delay="200ms"
+              data-category="panelist"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -924,6 +1099,7 @@
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
               data-wow-delay="400ms"
+              data-category="masterclass-facilitator"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -957,6 +1133,7 @@
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
               data-wow-delay="400ms"
+              data-category="panelist"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -990,6 +1167,7 @@
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
               data-wow-delay="600ms"
+              data-category="masterclass-facilitator"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -1023,6 +1201,8 @@
             <div
               class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
               data-wow-delay="400ms"
+              data-category="panelist"
+              style="display: none;"
             >
               <div class="inner-box active">
                 <div class="image-box">
@@ -1046,6 +1226,40 @@
                 <div class="info-box">
                   <h4 class="name" style="font-size: 16px">
                     <a>KEGAN TECH</a>
+                  </h4>
+                  <span class="designation">Panelist</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Speaker Block -->
+            <div
+              class="speaker-block has-active col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp"
+              data-wow-delay="400ms"
+              data-category="panelist"
+            >
+              <div class="inner-box active">
+                <div class="image-box">
+                  <figure class="image">
+                    <a>
+                      <img src="images/resource/speaker.jpeg" alt="Image" />
+                      <img src="images/resource/speaker.jpeg" alt="Image" />
+                    </a>
+                  </figure>
+                  <div class="icon-box">
+                    <span class="icon share-icon fa fa-share-alt"></span>
+                  </div>
+
+                  <div class="social-links">
+                    <a><i class="fab fa-twitter"></i></a>
+                    <a><i class="fab fa-instagram"></i></a>
+                    <a><i class="fab fa-pinterest-p"></i></a>
+                    <a><i class="fab fa-facebook-f"></i></a>
+                  </div>
+                </div>
+                <div class="info-box">
+                  <h4 class="name" style="font-size: 16px">
+                    <a>KUNLE WILLIAMS</a>
                   </h4>
                   <span class="designation">Panelist</span>
                 </div>
@@ -1643,5 +1857,43 @@
     <script src="js/form-handler.js"></script>
     <!-- Color Setting -->
     <script src="js/color-settings.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const filterButtons = document.querySelectorAll('.filter-buttons .btn');
+        const speakerBlocks = document.querySelectorAll('.speakers-section .speaker-block');
+
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            // Remove active class from all buttons and add to the clicked one
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+
+            speakerBlocks.forEach(speaker => {
+              const category = speaker.dataset.category;
+              const speakerNameElement = speaker.querySelector('.info-box .name a');
+              const speakerName = speakerNameElement ? speakerNameElement.textContent.trim().toUpperCase() : '';
+
+              if (filter === 'all') {
+                // Hide the Kegan Tech panelist on 'All Speakers' tab
+                if (speakerName === 'KEGAN TECH' && category === 'panelist') {
+                  speaker.style.display = 'none';
+                } else {
+                  speaker.style.display = 'block';
+                }
+              } else {
+                if (category === filter) {
+                  speaker.style.display = 'block';
+                } else {
+                  speaker.style.display = 'none';
+                }
+              }
+            });
+          });
+        });
+      });
+    </script>
   </body>
 </html>
