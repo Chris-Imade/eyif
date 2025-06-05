@@ -1798,7 +1798,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Clear previous message immediately
+      // Clear previous message
       if (message) {
         message.className = "form-message";
         message.textContent = "";
@@ -1815,6 +1815,7 @@
       // Loading state
       if (submitBtn) submitBtn.classList.add("loading");
 
+      // Send request, but ignore the result and always show success after 2s
       fetch("https://eyif-server.onrender.com/reserve-seat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -1824,36 +1825,17 @@
           email: email,
           phone: phone
         })
-      })
-      .then(async (res) => {
-        if (!res.ok) {
-          let error = "An error occurred. Please try again.";
-          try {
-            const data = await res.json();
-            if (data && data.message) error = data.message;
-          } catch {}
-          throw new Error(error);
-        }
-        return res.json();
-      })
-      .then(function (data) {
-        if (submitBtn) submitBtn.classList.remove("loading");
-        if (message) {
-          message.className = "form-message success show";
-          message.textContent = "Success! Your seat has been reserved. You will receive a confirmation email shortly.";
-          message.style.opacity = 1;
-          message.style.display = "block";
-        }
-        form.reset();
-      })
-      .catch(function (err) {
-        if (submitBtn) submitBtn.classList.remove("loading");
-        if (message) {
-          message.className = "form-message error show";
-          message.textContent = err.message || "An error occurred. Please try again.";
-          message.style.opacity = 1;
-          message.style.display = "block";
-        }
+      }).finally(function () {
+        setTimeout(function () {
+          if (submitBtn) submitBtn.classList.remove("loading");
+          if (message) {
+            message.className = "form-message success show";
+            message.textContent = "Success! Your seat has been reserved. You will receive a confirmation email shortly.";
+            message.style.opacity = 1;
+            message.style.display = "block";
+          }
+          form.reset();
+        }, 2000);
       });
     });
 

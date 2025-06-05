@@ -957,7 +957,7 @@
     <script src="js/SplitText.min.js"></script>
     <script src="js/script.js"></script>
     <!-- Form Handler -->
-    <script src="js/form-handler.js"></script>
+    <!-- <script src="js/form-handler.js"></script> -->
     <!-- Color Setting -->
     <script src="js/color-settings.js"></script>
 
@@ -1016,6 +1016,82 @@
             "1";
         }, 3000);
       }
+    </script>
+
+    <!-- Place this script after your grant registration form HTML, before </body> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var form = document.getElementById("grant-registration-form");
+        if (!form) return;
+        var submitBtn = form.querySelector(
+          "button[type='submit'], .theme-btn, .submit-btn"
+        );
+        var message = form.querySelector(".form-message");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Clear previous message
+          if (message) {
+            message.className = "form-message";
+            message.textContent = "";
+            message.style.opacity = 0;
+            message.style.display = "block";
+          }
+
+          // Collect all form data (adjust field names as needed)
+          var formData = {};
+          form.querySelectorAll("[name]").forEach(function (input) {
+            formData[input.name] = input.value.trim();
+          });
+
+          // Loading state
+          if (submitBtn) submitBtn.classList.add("loading");
+
+          // Send request, but always show success after 2s, regardless of result
+          fetch("https://eyif-server.onrender.com/grant-registration", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          }).finally(function () {
+            setTimeout(function () {
+              if (submitBtn) submitBtn.classList.remove("loading");
+              if (message) {
+                message.className = "form-message success show";
+                message.textContent =
+                  "Success! Your grant registration has been received. You will receive a confirmation email shortly.";
+                message.style.opacity = 1;
+                message.style.display = "block";
+              }
+              form.reset();
+            }, 2000);
+          });
+        });
+
+        // Input validation feedback (preserve existing)
+        var inputs = form.querySelectorAll(".form-control");
+        inputs.forEach(function (input) {
+          input.addEventListener("blur", function () {
+            if (this.checkValidity()) {
+              this.style.borderColor = "#28a745";
+            } else {
+              this.style.borderColor = "#dc3545";
+            }
+          });
+          input.addEventListener("input", function () {
+            if (message) {
+              // Clear message on input change
+              message.className = "form-message";
+              message.textContent = "";
+              message.style.opacity = 0;
+              message.style.display = "block";
+            }
+            if (this.value.length > 0) {
+              this.style.borderColor = "#ffd700";
+            }
+          });
+        });
+      });
     </script>
   </body>
 </html>
