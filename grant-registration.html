@@ -237,9 +237,9 @@
                 <!-- Btn Box -->
                 <div class="btn-box">
                   <a
-                    href="contact.html"
+                  href="#seat-reservation-section"
                     class="theme-btn btn-style-one light-bg"
-                    ><span class="btn-title">Register Now</span></a
+                    ><span class="btn-title">Reserve Seat</span></a
                   >
                 </div>
 
@@ -559,12 +559,7 @@
             >
               <div class="inner-column">
                 <div class="contact-form">
-                  <form
-                    method="post"
-                    action="#"
-                    id="grant-registration-form"
-                    onsubmit="showSuccessMessage(event)"
-                  >
+                  <form method="post" action="#" id="grant-registration-form">
                     <div class="form-group">
                       <label>Full Name</label>
                       <input
@@ -768,6 +763,7 @@
                         <span class="btn-title">Submit Application</span>
                       </button>
                     </div>
+                    <div class="form-message"></div>
                   </form>
                 </div>
               </div>
@@ -1039,7 +1035,7 @@
             message.style.display = "block";
           }
 
-          // Collect all form data (adjust field names as needed)
+          // Collect all form data
           var formData = {};
           form.querySelectorAll("[name]").forEach(function (input) {
             formData[input.name] = input.value.trim();
