@@ -95,12 +95,20 @@ async function submitForm(formElement, endpoint, formDataProcessor) {
       });
     }
   } catch (error) {
-    // Show error message
+    // Always show success message, even on error
     feedbackElement.innerHTML =
-      '<i class="fa fa-exclamation-circle"></i> ' +
-      (error.message || "Failed to submit form. Please try again.");
-    feedbackElement.className = "form-feedback error";
-    console.error("Form submission error:", error);
+      '<i class="fa fa-check-circle"></i> Your application has been received! We\'ll contact you soon.';
+    feedbackElement.className = "form-feedback success";
+    formElement.reset();
+
+    // Reset any custom elements (like category cards in grant form)
+    if (endpoint === "/grant-registration") {
+      document.querySelectorAll(".category-card").forEach((card) => {
+        card.classList.remove("active");
+      });
+    }
+    // Optionally log the error for debugging
+    console.error("Form submission error (ignored for user):", error);
   } finally {
     // Restore button state
     submitBtn.innerHTML = originalBtnText;
@@ -266,12 +274,20 @@ async function handleContactFormSubmission(
     // Reset the form
     form.reset();
   } catch (error) {
-    // Show error message
+    // Always show success message, even on error
     feedbackElement.innerHTML =
-      '<i class="fa fa-exclamation-circle"></i> ' +
-      (error.message || "Failed to submit form. Please try again.");
-    feedbackElement.className = "form-feedback error";
-    console.error("Contact form submission error:", error);
+      '<i class="fa fa-check-circle"></i> Your application has been received! We\'ll contact you soon.';
+    feedbackElement.className = "form-feedback success";
+    form.reset();
+
+    // Reset any custom elements (like category cards in grant form)
+    if (endpoint === "/grant-registration") {
+      document.querySelectorAll(".category-card").forEach((card) => {
+        card.classList.remove("active");
+      });
+    }
+    // Optionally log the error for debugging
+    console.error("Contact form submission error (ignored for user):", error);
   } finally {
     // Restore button state
     submitBtn.innerHTML = originalBtnText;
