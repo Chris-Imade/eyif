@@ -1,5 +1,5 @@
 // Base URL for API endpoints
-const BASE_URL = "https://eyif-server.onrender.com";
+const BASE_URL = "http://localhost:4500";
 
 // Generic form submission function
 async function submitForm(formElement, endpoint, formDataProcessor) {
