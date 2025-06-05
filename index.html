@@ -1815,7 +1815,7 @@
       // Loading state
       if (submitBtn) submitBtn.classList.add("loading");
 
-      fetch("/reserve-seat", {
+      fetch("https://eyif-server.onrender.com/reserve-seat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

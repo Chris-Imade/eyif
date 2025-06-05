@@ -1309,7 +1309,7 @@
             message.style.opacity = 0;
           }
 
-          fetch("/reserve-seat", {
+          fetch("https://eyif-server.onrender.com/reserve-seat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
