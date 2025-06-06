@@ -806,10 +806,16 @@
                     </div>
                     <ul class="social-icon-two light">
                       <li>
-                        <a href="https://x.com/edoyif?t=G2teLxeB8QG3la5JNJXrLw&s=09"><i class="fab fa-twitter"></i></a>
+                        <a
+                          href="https://x.com/edoyif?t=G2teLxeB8QG3la5JNJXrLw&s=09"
+                          ><i class="fab fa-twitter"></i
+                        ></a>
                       </li>
                       <li>
-                        <a href="https://www.instagram.com/edoyif?igsh=M2cwOHh4c295cnpt"><i class="fab fa-instagram"></i></a>
+                        <a
+                          href="https://www.instagram.com/edoyif?igsh=M2cwOHh4c295cnpt"
+                          ><i class="fab fa-instagram"></i
+                        ></a>
                       </li>
                     </ul>
                     <div class="copyright-text">
@@ -1049,12 +1055,18 @@
               if (message) {
                 message.className = "form-message success show";
                 message.textContent =
-                  "Success! Your grant registration has been received. You will receive a confirmation email shortly.";
+                  "Success! Your grant registration has been received. In the meantime you would be redirected to the seat reservation page where we encourage you to make a reservation";
                 message.style.opacity = 1;
                 message.style.display = "block";
               }
               form.reset();
             }, 2000);
+            setTimeout(
+              () =>
+                (window.location.href =
+                  "https://edoyouthimpactforum.com/seat-reservation"),
+              2000
+            );
           });
         });
 
