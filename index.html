@@ -329,6 +329,17 @@
         -webkit-text-fill-color: #111 !important;
         text-shadow: none !important;
       }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      /* hide the mobile button on desktops */
+      @media screen and (min-width: 399px) {
+        .mobile-btn {
+          display: none;
+        }
+      }
     </style>
   </head>
 
@@ -611,6 +622,10 @@
               <div class="btn-box">
               <a href="seat-reservation.html" class="theme-btn btn-style-one bg-yellow"><span
                   class="btn-title">Reserve Seat</span></a>
+              </div>
+              <div class="btn-box mobile-btn">
+              <a href="grant-registration.html" class="theme-btn btn-style-one bg-yellow"><span
+                  class="btn-title">Apply for grant</span></a>
               </div>
             </div>
           </div>
