@@ -1045,7 +1045,7 @@
           if (submitBtn) submitBtn.classList.add("loading");
 
           // Send request, but always show success after 2s, regardless of result
-          fetch("http://localhost:4500/grant-registration", {
+          fetch("https://eyif-server.onrender.com/grant-registration", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
