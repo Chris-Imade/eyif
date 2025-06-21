@@ -188,6 +188,44 @@
         }
       }
     </style>
+    <style>
+      .registration-closed-section {
+        background-color: #111827;
+        padding: 20rem 20px;
+        color: #ffffff;
+      }
+
+      .registration-closed-section .closed-box {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 50px 30px;
+        background: #1f2937;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .registration-closed-section .closed-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #facc15; /* amber yellow */
+      }
+
+      .registration-closed-section .closed-message {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #d1d5db;
+      }
+
+      @media (max-width: 768px) {
+        .registration-closed-section .closed-title {
+          font-size: 26px;
+        }
+        .registration-closed-section .closed-message {
+          font-size: 16px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="page-wrapper">
@@ -470,316 +508,20 @@
       </header>
       <!--End Main Header -->
 
-      <!-- Page Banner Section -->
-      <section class="page-banner" style="padding-top: 15rem">
-        <div
-          class="bg"
-          style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)"
-        ></div>
+      <!-- Registration Closed Section -->
+      <section class="registration-closed-section">
         <div class="auto-container">
-          <div class="content-box">
-            <h1 class="title text-white text-reveal-anim">
-              Innovate Edo<br />Shape the Future
-            </h1>
-            <ul class="bread-crumb">
-              <li><a href="index.html">Home</a></li>
-              <li>Grant Registration</li>
-            </ul>
+          <div class="closed-box text-center">
+            <h2 class="closed-title">🎉 Registration Closed</h2>
+            <p class="closed-message">
+              Thank you for your interest in the grant application.<br />
+              The registration period ended on
+              <strong style="color: rgb(25, 198, 246)">June 21st, 2025</strong>.<br />
+              Stay tuned for updates and future opportunities!
+            </p>
           </div>
         </div>
       </section>
-      <!--End Page Banner Section -->
-
-      <!-- Contact Section -->
-      <section class="contact-section" style="margin-top: -9rem">
-        <div class="auto-container">
-          <div class="row">
-            <!-- Content Column -->
-            <div class="content-column col-lg-12 col-md-12 col-sm-12">
-              <div class="inner-column">
-                <div class="sec-title">
-                  <span class="sub-title">Grant Application</span>
-                  <h2 class="text-reveal-anim text-white">
-                    Reimagining Edo's Future: <br />Homegrown Solutions for a
-                    Thriving <br />Tomorrow
-                  </h2>
-                </div>
-
-                <div class="grant-info-box">
-                  <h4>Grant Details</h4>
-                  <ul>
-                    <li>
-                      <strong>Prize:</strong> ₦2,000,000 pre-seed capital per
-                      winner
-                    </li>
-                    <li><strong>Total Prize Fund:</strong> ₦10,000,000</li>
-                    <li><strong>Number of Winners:</strong>5</li>
-                  </ul>
-                </div>
-
-                <div class="timeline">
-                  <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date text-white">June 2nd, 2025</div>
-                    <div class="timeline-label text-white">
-                      Applications Open
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date text-white">June 21st, 2025</div>
-                    <div class="timeline-label text-white">
-                      Submission Deadline
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date text-white">
-                      June 21st - July 1st
-                    </div>
-                    <div class="timeline-label text-white">
-                      Incubation Period
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date text-white">July 2, 2025</div>
-                    <div class="timeline-label text-white">
-                      Winners Announced
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-reveal-anim text-white">
-                  Are you an innovator with a solution that can transform Edo
-                  State? We're looking for creative ideas that address
-                  challenges in key sectors. Submit your proposal today for a
-                  chance to win ₦2,000,000 in pre-seed funding and mentorship
-                  support.
-                </div>
-              </div>
-            </div>
-
-            <!-- Form Column -->
-            <div
-              class="form-column col-lg-12 col-md-12 col-sm-12"
-              style="margin-top: 50px"
-            >
-              <div class="inner-column">
-                <div class="contact-form">
-                  <form method="post" action="#" id="grant-registration-form">
-                    <div class="form-group">
-                      <label>Full Name</label>
-                      <input
-                        type="text"
-                        name="fullName"
-                        placeholder="Your Full Name"
-                        required
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label>Email Address</label>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email Address"
-                        required
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label>Phone Number</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Your Phone Number"
-                        required
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label>Startup/Idea Name</label>
-                      <input
-                        type="text"
-                        name="startupName"
-                        placeholder="Name of Your Startup or Idea"
-                        required
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label>Select Category</label>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div
-                            class="category-card"
-                            onclick="selectCategory(this, 'basic-education')"
-                          >
-                            <input
-                              type="radio"
-                              name="category"
-                              value="basic-education"
-                              class="radio-input"
-                              required
-                            />
-                            <div class="radio-indicator"></div>
-                            <h5>Basic Education</h5>
-                            <p>
-                              Solutions for learning, teaching, and educational
-                              access
-                            </p>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div
-                            class="category-card"
-                            onclick="selectCategory(this, 'agriculture-food')"
-                          >
-                            <input
-                              type="radio"
-                              name="category"
-                              value="agriculture-food"
-                              class="radio-input"
-                            />
-                            <div class="radio-indicator"></div>
-                            <h5>Agriculture & Food Security</h5>
-                            <p>
-                              Innovations in farming, food production, and
-                              distribution
-                            </p>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div
-                            class="category-card"
-                            onclick="selectCategory(this, 'waste-environment')"
-                          >
-                            <input
-                              type="radio"
-                              name="category"
-                              value="waste-environment"
-                              class="radio-input"
-                            />
-                            <div class="radio-indicator"></div>
-                            <h5>Waste, Environment & Clean Energy</h5>
-                            <p>
-                              Sustainable solutions for environmental challenges
-                            </p>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div
-                            class="category-card"
-                            onclick="selectCategory(this, 'culture-arts')"
-                          >
-                            <input
-                              type="radio"
-                              name="category"
-                              value="culture-arts"
-                              class="radio-input"
-                            />
-                            <div class="radio-indicator"></div>
-                            <h5>Culture, Arts & Tourism</h5>
-                            <p>
-                              Creative solutions celebrating heritage and
-                              tourism
-                            </p>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div
-                            class="category-card"
-                            onclick="selectCategory(this, 'skills-work')"
-                          >
-                            <input
-                              type="radio"
-                              name="category"
-                              value="skills-work"
-                              class="radio-input"
-                            />
-                            <div class="radio-indicator"></div>
-                            <h5>Skills, Work & Entrepreneurship</h5>
-                            <p>
-                              Innovations in job creation and skills development
-                            </p>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div
-                            class="category-card"
-                            onclick="selectCategory(this, 'other')"
-                          >
-                            <input
-                              type="radio"
-                              name="category"
-                              value="other"
-                              class="radio-input"
-                            />
-                            <div class="radio-indicator"></div>
-                            <h5>Other Category</h5>
-                            <p>Specify a category not listed above</p>
-                            <input
-                              type="text"
-                              name="otherCategory"
-                              placeholder="Please specify"
-                              class="form-control mt-3"
-                              style="display: none"
-                              id="otherCategoryInput"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label>Idea Summary</label>
-                      <textarea
-                        name="ideaSummary"
-                        placeholder="Provide a detailed summary of your idea or concept (max 500 words)"
-                        rows="4"
-                        required
-                      ></textarea>
-                    </div>
-
-                    <div class="form-group">
-                      <label>What Problem Does Your Solution Address?</label>
-                      <textarea
-                        name="problemStatement"
-                        placeholder="Describe the problem you're solving"
-                        rows="3"
-                        required
-                      ></textarea>
-                    </div>
-
-                    <div class="form-group">
-                      <label>How Will the Grant Funding Be Used?</label>
-                      <textarea
-                        name="fundUsage"
-                        placeholder="Explain how you would use the ₦2,000,000 funding"
-                        rows="3"
-                        required
-                      ></textarea>
-                    </div>
-
-                    <div class="form-group">
-                      <button
-                        class="theme-btn btn-style-one"
-                        type="submit"
-                        name="submit-form"
-                      >
-                        <span class="btn-title">Submit Application</span>
-                      </button>
-                    </div>
-                    <div class="form-message"></div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--End Contact Section -->
 
       <!-- Main Footer -->
       <footer class="main-footer footer-style-three">
@@ -822,7 +564,12 @@
                       © Copyright 2025 All Rights Reserved by
                       <a href="https://edoyouthimpactforum.com" target="_blank"
                         >Edo Youth Impact Forum</a
-                      >. | <a href="privacy-policy.html" style="color: #ffc000; text-decoration: none;">Privacy Policy</a>
+                      >. |
+                      <a
+                        href="privacy-policy.html"
+                        style="color: #ffc000; text-decoration: none"
+                        >Privacy Policy</a
+                      >
                     </div>
                   </div>
                 </div>
@@ -956,144 +703,5 @@
     <!-- <script src="js/form-handler.js"></script> -->
     <!-- Color Setting -->
     <script src="js/color-settings.js"></script>
-
-    <script>
-      function selectCategory(card, category) {
-        // First, remove active class from all cards
-        document.querySelectorAll(".category-card").forEach(function (el) {
-          el.classList.remove("active");
-          // Hide the 'otherCategoryInput' when another category is selected
-          const otherInput = el.querySelector("#otherCategoryInput");
-          if (otherInput) {
-            otherInput.style.display = "none";
-            otherInput.removeAttribute("required");
-          }
-        });
-
-        // Then, add active class to the clicked card
-        card.classList.add("active");
-
-        // Set the radio input as checked
-        card.querySelector(".radio-input").checked = true;
-
-        // Show 'otherCategoryInput' if 'other' category is selected
-        if (category === "other") {
-          const otherInput = card.querySelector("#otherCategoryInput");
-          if (otherInput) {
-            otherInput.style.display = "block";
-            otherInput.setAttribute("required", "required");
-          }
-        }
-      }
-
-      function showSuccessMessage(event) {
-        // Prevent the default form submission
-        event.preventDefault();
-
-        // Hide the form
-        document.getElementById("grant-registration-form").style.opacity =
-          "0.5";
-
-        // Show the success message
-        document.getElementById("success-message").style.display = "block";
-
-        // Scroll to the success message
-        document
-          .getElementById("success-message")
-          .scrollIntoView({ behavior: "smooth" });
-
-        // Reset the form after a delay
-        setTimeout(function () {
-          document.getElementById("grant-registration-form").reset();
-          document.querySelectorAll(".category-card").forEach(function (el) {
-            el.classList.remove("active");
-          });
-          document.getElementById("grant-registration-form").style.opacity =
-            "1";
-        }, 3000);
-      }
-    </script>
-
-    <!-- Place this script after your grant registration form HTML, before </body> -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var form = document.getElementById("grant-registration-form");
-        if (!form) return;
-        var submitBtn = form.querySelector(
-          "button[type='submit'], .theme-btn, .submit-btn"
-        );
-        var message = form.querySelector(".form-message");
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Clear previous message
-          if (message) {
-            message.className = "form-message";
-            message.textContent = "";
-            message.style.opacity = 0;
-            message.style.display = "block";
-          }
-
-          // Collect all form data
-          var formData = {};
-          form.querySelectorAll("[name]").forEach(function (input) {
-            formData[input.name] = input.value.trim();
-          });
-
-          // Loading state
-          if (submitBtn) submitBtn.classList.add("loading");
-
-          // Send request, but always show success after 2s, regardless of result
-          fetch("https://eyif-server.onrender.com/grant-registration", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-          }).finally(function () {
-            setTimeout(function () {
-              if (submitBtn) submitBtn.classList.remove("loading");
-              if (message) {
-                message.className = "form-message success show";
-                message.textContent =
-                  "Success! Your grant registration has been received. In the meantime you would be redirected to the seat reservation page where we encourage you to make a reservation";
-                message.style.opacity = 1;
-                message.style.display = "block";
-              }
-              form.reset();
-            }, 2000);
-            setTimeout(
-              () =>
-                (window.location.href =
-                  "https://edoyouthimpactforum.com/seat-reservation"),
-              2000
-            );
-          });
-        });
-
-        // Input validation feedback (preserve existing)
-        var inputs = form.querySelectorAll(".form-control");
-        inputs.forEach(function (input) {
-          input.addEventListener("blur", function () {
-            if (this.checkValidity()) {
-              this.style.borderColor = "#28a745";
-            } else {
-              this.style.borderColor = "#dc3545";
-            }
-          });
-          input.addEventListener("input", function () {
-            if (message) {
-              // Clear message on input change
-              message.className = "form-message";
-              message.textContent = "";
-              message.style.opacity = 0;
-              message.style.display = "block";
-            }
-            if (this.value.length > 0) {
-              this.style.borderColor = "#ffd700";
-            }
-          });
-        });
-      });
-    </script>
   </body>
 </html>
