@@ -67,7 +67,7 @@ Tags:          event, conference, marketing, business
   --theme-color-dark: #000000;
   --theme-color1: #d51c55;
   --theme-color2: #f4e412;
-  --theme-color3: #9914cb;
+  --theme-color3: #345995;
   --theme-color4: #ed5f00;
   --text-color: #666666;
   --dark-layout-color: #121212;
@@ -40983,4 +40983,13 @@ form .response .text-info {
   i {
   left: auto;
   right: 0;
+}
+.header-style-one .main-box .header-navbar {
+  background-color: #345995 !important;
+}
+.header-style-one .main-box .nav-outer::before {
+  border-bottom: 70px solid #345995 !important;
+}
+.header-style-one .main-box .nav-outer::after {
+  border-top: 18px solid #2a4777 !important;
 }
