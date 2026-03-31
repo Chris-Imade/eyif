@@ -19108,7 +19108,7 @@ form .response .text-info {
   position: absolute;
   left: -3px;
   bottom: 16px;
-  width: 8px;
+  width: 8px;theme-color1
   height: 8px;
   background-color: #a00;
   border: solid 2px #a00;
@@ -19230,7 +19230,7 @@ Tags:          event, conference, marketing, business
 :root {
   --theme-color-light: #ffffff;
   --theme-color-dark: #000000;
-  --theme-color1: #d51c55;
+  --theme-color1: #345995;
   --theme-color2: #f4e412;
   --theme-color3: #9914cb;
   --theme-color4: #ed5f00;
