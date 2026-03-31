@@ -6,13 +6,13 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta name="description" content="Edo Youth Impact Forum 2026 - Empowered Youth, Transformed Future" />
+  <meta name="description" content="Edo Youth Impact Forum 2025 - Empowered Youth, Transformed Future" />
   <meta name="keywords" content="youth, empowerment, entrepreneurship, innovation, Edo, forum, EYIF" />
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="EYIF 2026 | Edo Youth Impact Forum | Empowered Youth, Transformed Future" />
+  <meta property="og:title" content="EYIF 2025 | Edo Youth Impact Forum | Empowered Youth, Transformed Future" />
   <meta property="og:description"
-    content="Edo Youth Impact Forum 2026 - A platform for youth empowerment, leadership development, and community transformation in Edo State." />
+    content="Edo Youth Impact Forum 2025 - A platform for youth empowerment, leadership development, and community transformation in Edo State." />
   <meta property="og:image" content="images/updates/IMG-20250703-WA0111.jpg" />
   <meta property="og:url" content="https://edoyouthimpactforum.com" />
   <meta property="og:type" content="website" />
@@ -20,14 +20,14 @@
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EYIF 2026 | Edo Youth Impact Forum | Empowered Youth, Transformed Future" />
+  <meta name="twitter:title" content="EYIF 2025 | Edo Youth Impact Forum | Empowered Youth, Transformed Future" />
   <meta name="twitter:description"
-    content="Edo Youth Impact Forum 2026 - A platform for youth empowerment, leadership development, and community transformation in Edo State." />
+    content="Edo Youth Impact Forum 2025 - A platform for youth empowerment, leadership development, and community transformation in Edo State." />
   <meta name="twitter:image" content="images/updates/IMG-20250703-WA0111.jpg" />
 
   <!-- Page Title -->
   <title>
-    EYIF 2026 | Edo Youth Impact Forum | Empowered Youth, Transformed Future
+    EYIF 2025 | Edo Youth Impact Forum | Empowered Youth, Transformed Future
   </title>
   <!-- Favicon Icon -->
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
@@ -630,7 +630,7 @@
         </div>
         <!-- Time Counter -->
         <div class="time-counter wow fadeIn" data-wow-delay="3500ms">
-          <div class="time-countdown" data-countdown="08/05/2026"></div>
+          <div class="time-countdown" data-countdown="07/02/2025"></div>
         </div>
       </div>
     </section>
@@ -1330,8 +1330,8 @@
   </section> -->
   <!-- End Powered By Section -->
 
-  <!-- Program Flow Section -->
-  <!-- <section class="event-section">
+  <!-- Event Section -->
+  <section class="event-section">
     <div class="shape-three bounce-y"></div>
     <div class="shape-four bounce-y"></div>
     <div class="auto-container">
@@ -1348,14 +1348,16 @@
       <div class="event-tabs tabs-box">
         <ul class="tab-btns tab-buttons wow fadeInUp">
           <li class="tab-btn active-btn" data-tab="#tab1">
-            August 5th, 2026
+            July 2nd, 2025
           </li>
         </ul>
 
-
+        <!-- Image Column -->
         <div class="tabs-content wow fadeInUp" data-wow-delay="200ms">
+          <!--Tab-->
           <div class="tab active-tab" id="tab1">
             <div class="outer-box">
+              <!-- Event Block -->
               <div class="event-block">
                 <div class="inner-box event-block-inner">
                   <div class="date-box">
@@ -1379,6 +1381,7 @@
                 </div>
               </div>
 
+              <!-- Event Block -->
               <div class="event-block">
                 <div class="inner-box event-block-inner">
                   <div class="date-box">
@@ -1401,6 +1404,7 @@
                 </div>
               </div>
 
+              <!-- Event Block -->
               <div class="event-block">
                 <div class="inner-box event-block-inner">
                   <div class="date-box">
@@ -1425,6 +1429,7 @@
                 </div>
               </div>
 
+              <!-- Event Block -->
               <div class="event-block">
                 <div class="inner-box event-block-inner">
                   <div class="date-box">
@@ -1449,6 +1454,7 @@
                 </div>
               </div>
 
+              <!-- Event Block -->
               <div class="event-block">
                 <div class="inner-box event-block-inner">
                   <div class="date-box">
@@ -1473,6 +1479,7 @@
                 </div>
               </div>
 
+              <!-- Event Block -->
               <div class="event-block">
                 <div class="inner-box event-block-inner">
                   <div class="date-box">
@@ -1497,6 +1504,7 @@
                 </div>
               </div>
 
+              <!-- Event Block -->
               <div class="event-block">
                 <div class="inner-box event-block-inner">
                   <div class="date-box">
@@ -1525,15 +1533,15 @@
         </div>
       </div>
     </div>
-  </section> -->
-  <!-- Program Flow Section -->
+  </section>
+  <!-- End Event Section -->
 
   <!-- Seat Reservation Section -->
   <section id="seat-reservation-section" class="seat-reservation-section" style="background: #f9f9f9; padding: 60px 0;">
     <div class="auto-container">
       <div class="sec-title text-center">
         <span class="sub-title">Reserve Your Seat</span>
-        <h2 class="text-reveal-anim" style="color:#111 !important;">Secure Your Spot at EYIF 2026</h2>
+        <h2 class="text-reveal-anim" style="color:#111 !important;">Secure Your Spot at EYIF 2025</h2>
         <div class="text" style="color:#111;">Fill in your details below to reserve your seat for the event.</div>
       </div>
       <div class="row justify-content-center">
@@ -1742,7 +1750,7 @@
       <div class="auto-container">
         <div class="inner-container">
           <div class="copyright-text">
-            © Copyright 2026 EYIF. All Rights Reserved. | <a href="privacy-policy.html"
+            © Copyright 2025 EYIF. All Rights Reserved. | <a href="privacy-policy.html"
               style="color: #ffc000; text-decoration: none;">Privacy Policy</a>
           </div>
         </div>

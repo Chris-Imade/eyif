@@ -705,6 +705,13 @@
 			document.querySelectorAll(".text-reveal-anim");
 		if (tagetedElementContainer?.length) {
 			tagetedElementContainer.forEach(e => {
+				// Skip text splitting on tablet and smaller screens (max-width: 991px)
+				if (window.innerWidth <= 991) {
+					// Just make text visible without animation on small screens
+					gsap.set(e, { opacity: 1 });
+					return;
+				}
+				
 				var t = new SplitType(e, {
 					types: "chars",
 				});

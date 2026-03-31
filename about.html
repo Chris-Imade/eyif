@@ -10,7 +10,7 @@
     />
     <meta
       name="description"
-      content="Edo Youth Impact Forum 2025 - Empowered Youth, Transformed Future"
+      content="Edo Youth Impact Forum 2026 - Empowered Youth, Transformed Future"
     />
     <meta
       name="keywords"
@@ -24,7 +24,7 @@
     />
     <meta
       property="og:description"
-      content="Edo Youth Impact Forum 2025 - A movement of possibility, leadership, innovation, and civic responsibility for the youth of Edo State."
+      content="Edo Youth Impact Forum 2026 - A movement of possibility, leadership, innovation, and civic responsibility for the youth of Edo State."
     />
     <meta property="og:image" content="images/resource/about1-1.avif" />
     <meta
@@ -42,12 +42,12 @@
     />
     <meta
       name="twitter:description"
-      content="Edo Youth Impact Forum 2025 - A movement of possibility, leadership, innovation, and civic responsibility for the youth of Edo State."
+      content="Edo Youth Impact Forum 2026 - A movement of possibility, leadership, innovation, and civic responsibility for the youth of Edo State."
     />
     <meta name="twitter:image" content="images/resource/about1-1.avif" />
 
     <!-- Page Title -->
-    <title>EYIF 2025 | About Edo Youth Impact Forum</title>
+    <title>EYIF 2026 | About Edo Youth Impact Forum</title>
     <!-- Favicon Icon -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <!-- Stylesheets -->
@@ -66,6 +66,27 @@
     h2.scrub-each-word {
       color: #000 !important;
       -webkit-text-fill-color: #000 !important;
+    }
+    
+    /* Disable text animation and prevent character splitting on tablet and smaller screens */
+    @media (max-width: 991px) {
+      .about-section .sec-title h2.text-reveal-anim {
+        opacity: 1 !important;
+      }
+      .about-section .sec-title h2.text-reveal-anim .char {
+        opacity: 1 !important;
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+      }
+      /* Prevent SplitType from breaking text - hide split characters and show original text */
+      .about-section .sec-title h2.text-reveal-anim.text-split {
+        word-wrap: break-word;
+        white-space: normal;
+      }
+      .about-section .sec-title h2.text-reveal-anim.text-split .char,
+      .about-section .sec-title h2.text-reveal-anim.text-split .word {
+        display: inline !important;
+      }
     }
   </style>
   </head>
@@ -384,28 +405,21 @@
       <!-- About Section -->
       <section class="about-section">
         <!-- <div class="icon-one bounce-y"></div> -->
-        <div class="icon-two bounce-y"></div>
+        <!-- <div class="icon-two bounce-y"></div> -->
         <div class="auto-container">
           <div class="outer-box two">
-            <div class="content-box wow fadeInRight" data-wow-delay="200ms">
+            <div class="content-box wow fadeInRight" data-wow-delay="200ms" style="text-align: center;">
               <div class="sec-title">
-                <span class="sub-title">About Edo Youth Impact Forum</span>
+                <span class="sub-title">About EYIF</span>
                 <h2 class="text-reveal-anim">
-                  A Movement of <br />
-                  Possibility & Leadership
+                  From Forum to Foundation<br />
+                  Building a Generation of Builders
                 </h2>
                 <div class="text text-anim" style="color: rgb(91, 89, 89);">
-                  The Edo Youth Impact Forum is a rallying point for young
-                  people across Edo State to gather, connect, and create the
-                  blueprint for a thriving future. It is more than an event — it
-                  is a movement of possibility, leadership, innovation, and
-                  civic responsibility. At a time when the strength and
-                  potential of Nigerian youth have become central to national
-                  development, this conference serves as a bold statement: Edo
-                  youths are ready.
+                  The Edo Youth Impact Foundation (EYIF) is a youth-focused development institution committed to unlocking the potential of young people through enterprise, innovation, and opportunity. What began as the Edo Youth Impact Forum in June 2026 has evolved into a permanent platform designed to deliver sustained, measurable, and scalable impact. Today, EYIF operates as a foundation with a long-term mandate: to equip young people with the tools they need to build, grow, and contribute meaningfully to economic transformation — starting from Edo and expanding across Nigeria, Africa, and beyond.
                 </div>
               </div>
-              <div class="btn-box">
+              <div class="btn-box" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                 <a
                   href="grant-registration.html"
                   class="theme-btn btn-style-one icon-btn bg-yellow"
@@ -423,7 +437,7 @@
             <div class="image-box wow fadeInUp">
               <figure class="image">
                 <img
-                  src="images/resource/about1-1.avif"
+                  src="images/updates/IMG-20250703-WA0492.jpg"
                   alt="Edo Youth Impact Forum"
                 />
               </figure>
@@ -445,23 +459,23 @@
       <div class="marquee-section">
         <div class="marquee-container">
           <div class="marquee">
-            <div class="text">Empowerment</div>
+            <div class="text">Capital</div>
+            <div class="text">*</div>
+            <div class="text">Capacity</div>
+            <div class="text">*</div>
+            <div class="text">Connections</div>
+            <div class="text">*</div>
+            <div class="text">Continuity</div>
+            <div class="text">*</div>
+            <div class="text">Enterprise</div>
             <div class="text">*</div>
             <div class="text">Innovation</div>
             <div class="text">*</div>
-            <div class="text">Entrepreneurship</div>
+            <div class="text">Capital</div>
             <div class="text">*</div>
-            <div class="text">Leadership</div>
+            <div class="text">Capacity</div>
             <div class="text">*</div>
-            <div class="text">Transformation</div>
-            <div class="text">*</div>
-            <div class="text">Growth</div>
-            <div class="text">*</div>
-            <div class="text">Empowerment</div>
-            <div class="text">*</div>
-            <div class="text">Innovation</div>
-            <div class="text">*</div>
-            <div class="text">Entrepreneurship</div>
+            <div class="text">Connections</div>
             <div class="text">*</div>
             <div class="text">Leadership</div>
             <div class="text">*</div>
@@ -488,24 +502,16 @@
             <!-- Content Column -->
             <div class="col-xl-6 col-lg-6 col-md-12">
               <div class="sec-title">
-                <span class="sub-title">Our Heritage</span>
+                <span class="sub-title">Our Journey</span>
                 <h2 class="scrub-each-word text-split">
-                  The Legacy of Edo Youth
+                  The Proof of Concept
                 </h2>
                 <div class="text text-anim" style="margin-top: 20px">
                   <p>
-                    Edo State has a deep history of youthful strength,
-                    leadership, and ingenuity. From the era of the Benin
-                    Kingdom, where young warriors and artisans shaped the
-                    cultural and economic foundation of the region, to the
-                    present day, where Edo youths continue to stand out in
-                    education, entertainment, technology, and activism — the
-                    youth of Edo have always been builders of legacy.
+                    The inaugural edition of the Edo Youth Impact Forum marked a defining moment. Through the support of the Edo State Government, ₦2,000,000 in micro-grants were awarded to five youth-led startups. Within months, these ventures began to demonstrate strong progress — expanding operations, increasing revenue, creating jobs, and in some cases nearly doubling the value of the initial capital deployed.
                   </p>
                   <p style="margin-top: 15px">
-                    Our youth have carried the spirit of excellence into all
-                    sectors — from the streets of Benin City to global corridors
-                    of innovation, leadership, and culture.
+                    Recognising the need to sustain and scale this impact, the Forum transitioned into the Edo Youth Impact Foundation — ensuring that youth empowerment becomes continuous, institutional, and generational.
                   </p>
                 </div>
               </div>
@@ -523,7 +529,7 @@
                 "
               >
                 <img
-                  src="images/resource/about1-2.jpg"
+                  src="images/updates/IMG-20250703-WA0203.jpg"
                   alt="Legacy of Edo Youth"
                   style="width: 100%"
                 />
@@ -539,7 +545,7 @@
                   "
                 >
                   <h4 class="text-white">
-                    From Ancient Legacy to Modern Excellence
+                    ₦2M in Grants · 5 Startups Funded · 2× Capital Growth
                   </h4>
                 </div>
               </div>
@@ -573,7 +579,7 @@
                 data-wow-delay="200ms"
               >
                 <div class="time-counter">
-                  <div class="time-countdown" data-countdown="07/02/2025"></div>
+                  <div class="time-countdown" data-countdown="08/05/2026"></div>
                 </div>
               </div>
 
@@ -588,8 +594,8 @@
 
             <figure class="image reveal bounce-x">
               <img
-                src="images/resource/woman.png"
-                style="margin-right: -100px"
+                src="images/updates/IMG-20250703-WA0376.jpg"
+                style="margin-right: -100px; object-fit: cover; border-radius: 10px;"
                 alt="Image"
               />
             </figure>
@@ -1126,7 +1132,7 @@
                       </li>
                     </ul>
                     <div class="copyright-text">
-                      © Copyright 2025 All Rights Reserved by
+                      © Copyright 2026 All Rights Reserved by
                       <a href="https://edoyouthimpactforum.com" target="_blank"
                         >Edo Youth Impact Forum</a
                       >. | <a href="privacy-policy.html" style="color: #ffc000; text-decoration: none;">Privacy Policy</a>
