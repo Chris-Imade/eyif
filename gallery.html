@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta name="description" content="Edo Youth Impact Forum 2025 - Event Gallery" />
+  <meta name="keywords" content="youth, empowerment, entrepreneurship, innovation, Edo, forum, EYIF, gallery" />
+
+  <meta property="og:title" content="Gallery | EYIF 2025 | Edo Youth Impact Forum" />
+  <meta property="og:description" content="View photos from the Edo Youth Impact Forum 2025 event." />
+  <meta property="og:image" content="images/updates/IMG-20250703-WA0111.jpg" />
+  <meta property="og:url" content="https://edoyouthimpactforum.com/gallery.html" />
+  <meta property="og:type" content="website" />
+
+  <title>Gallery | EYIF 2025 | Edo Youth Impact Forum</title>
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/master.css" rel="stylesheet" />
+  <link href="css/color-switcher-design.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+
+  <style>
+    .gallery-section {
+      padding: 80px 0;
+      background-color: #f9f9f9;
+    }
+
+    .gallery-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #fff;
+      opacity: 0;
+    }
+
+    .gallery-item.visible {
+      animation: fadeInUp 0.55s ease forwards;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item:nth-child(3n+1) {
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(5n+2) {
+      grid-row: span 1;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .gallery-item:nth-child(3n+1),
+      .gallery-item:nth-child(5n+2) {
+        grid-row: span 1;
+      }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      overflow: hidden;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10000;
+      transition: color 0.3s ease;
+    }
+
+    .modal-close:hover {
+      color: #ffc000;
+    }
+
+    .modal-prev,
+    .modal-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    .modal-prev:hover,
+    .modal-next:hover {
+      background-color: rgba(255, 192, 0, 0.8);
+    }
+
+    .modal-prev {
+      left: 20px;
+    }
+
+    .modal-next {
+      right: 20px;
+    }
+
+    .modal-counter {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 18px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .modal-prev,
+      .modal-next {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+      }
+
+      .modal-prev {
+        left: 10px;
+      }
+
+      .modal-next {
+        right: 10px;
+      }
+
+      .modal-close {
+        top: 10px;
+        right: 20px;
+        font-size: 35px;
+      }
+    }
+
+    .page-banner {
+      padding: 180px 0 110px;
+      position: relative;
+      background-size: cover;
+      background-position: center top;
+    }
+
+    .page-banner:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .page-banner .content-box {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .page-banner .title {
+      color: #fff;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .page-banner .breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .page-banner .breadcrumb a {
+      color: #ffc000;
+      text-decoration: none;
+    }
+
+    .page-banner .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 767px) {
+      .page-banner {
+        padding: 120px 0 60px;
+      }
+
+      .page-banner .title {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="circle"></div>
+    <div class="circle-follow"></div>
+
+    <div class="preloader" style="display:none"></div>
+
+    <!-- Main Header-->
+    <header class="main-header header-style-one inner-page-header">
+        <div class="auto-container">
+          <div class="main-box">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Logo" title="EYIF" /></a>
+              </div>
+            </div>
+
+            <div class="header-navbar">
+              <div class="nav-outer">
+                <nav class="nav main-menu">
+                  <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="grant-registration.html">Grants</a></li>
+                    <li class="current"><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="outer-box">
+                <button class="ui-btn search-btn">
+                  <i class="icon flaticon-search"></i>
+                </button>
+
+                <button class="ui-btn toggle-hidden-bar">
+                  <i class="icon flaticon-menu-2"></i>
+                </button>
+
+                <div class="btn-box">
+                  <a href="grant-registration.html" class="theme-btn btn-style-one light-bg"><span
+                      class="btn-title">Apply for grant</span></a>
+                </div>
+
+                <div class="mobile-nav-toggler"><i class="fa fa-bars"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- Mobile Menu  -->
+      <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+
+        <nav class="menu-box">
+          <div class="upper-box">
+            <div class="logo-box">
+              <div class="nav-logo light">
+                <a href="index.html"><img src="images/logo-2.png" alt="Logo" /></a>
+              </div>
+              <div class="nav-logo dark">
+                <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
+              </div>
+            </div>
+            <div class="close-btn"><i class="icon fa fa-times"></i></div>
+          </div>
+
+          <ul class="navigation clearfix">
+          </ul>
+          <ul class="contact-list-one">
+            <li>
+              <i class="icon lnr-icon-phone-handset"></i>
+              <span class="title">Call Us</span>
+              <div class="text">
+                <a href="tel:+2348153732506">+234 815 373 2506</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon lnr-icon-envelope1"></i>
+              <span class="title">Send Email</span>
+              <div class="text">
+                <a href="mailto:info@edoyouthimpactforum.com">info@edoyouthimpactforum.com</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon lnr-icon-map-marker"></i>
+              <span class="title">Address</span>
+              <div class="text">Victor Uwaifo Creative Hub, Benin City, Edo State</div>
+            </li>
+          </ul>
+
+          <ul class="social-links">
+            <li>
+              <a href="index.html#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="index.html#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="index.html#"><i class="fab fa-pinterest"></i></a>
+            </li>
+            <li>
+              <a href="index.html#"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="search-popup">
+        <span class="search-back-drop"></span>
+        <button class="close-search">
+          <span class="fa fa-times"></span>
+        </button>
+
+        <div class="search-inner">
+          <form method="post" action="https://expert-themes.com/html/konfer/blog-showcase.html">
+            <div class="form-group">
+              <input type="search" name="search-field" value="" placeholder="Search..." required="" />
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="sticky-header">
+        <div class="auto-container">
+          <div class="inner-container">
+            <div class="logo-box">
+              <div class="logo light">
+                <a href="index.html#" title=""><img src="images/logo-2.png" alt="Logo" /></a>
+              </div>
+              <div class="logo dark">
+                <a href="index.html#" title=""><img src="images/logo.png" alt="Logo" /></a>
+              </div>
+            </div>
+
+            <div class="nav-outer">
+              <nav class="main-menu">
+                <div class="navbar-collapse show collapse clearfix">
+                  <ul class="navigation clearfix">
+                  </ul>
+                </div>
+              </nav>
+
+              <div class="mobile-nav-toggler">
+                <span class="icon lnr-icon-bars"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--End Main Header -->
+
+    <div class="hidden-bar-back-drop"></div>
+
+    <section class="hidden-bar">
+      <div class="inner-box">
+        <div class="upper-box">
+          <div class="logo-box">
+            <div class="nav-logo light">
+              <a href="index.html"><img src="images/logo-2.png" alt="Logo" /></a>
+            </div>
+            <div class="nav-logo dark">
+              <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
+            </div>
+          </div>
+          <div class="close-btn"><i class="icon fa fa-times"></i></div>
+        </div>
+
+        <div class="text-box">
+          <h4 class="title">Empowering Youth for a Transformed Future</h4>
+          <div class="text">
+            The Edo Youth Impact Forum (EYIF) is designed to inspire and equip
+            young people with practical skills, entrepreneurial thinking, and
+            civic awareness. Join us to be part of this transformative
+            movement.
+          </div>
+        </div>
+
+        <ul class="contact-list-one">
+          <li>
+            <i class="icon lnr-icon-phone-handset"></i>
+            <span class="title">Call Us</span>
+            <div class="text">
+              <a href="tel:+2348153732506">+234 815 373 2506</a>
+            </div>
+          </li>
+          <li>
+            <i class="icon lnr-icon-envelope1"></i>
+            <span class="title">Send Email</span>
+            <div class="text">
+              <a href="mailto:info@edosyouthimpactforum.com">info@edosyouthimpactforum.com</a>
+            </div>
+          </li>
+          <li>
+            <i class="icon lnr-icon-map-marker"></i>
+            <span class="title">Address</span>
+            <div class="text">
+              Victor Uwaifo Creative Hub, <br />
+              Benin City, Edo State.
+            </div>
+          </li>
+        </ul>
+
+        <ul class="social-links">
+          <li>
+            <a href="https://x.com/edoyif?t=G2teLxeB8QG3la5JNJXrLw&s=09"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/edoyif?igsh=M2cwOHh4c295cnpt"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: url(images/updates/IMG-20250703-WA0111.jpg); background-position: center top;">
+      <div class="auto-container">
+        <div class="content-box">
+          <h1 class="title">Event Gallery</h1>
+          <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Gallery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="gallery-container">
+        <div class="sec-title text-center">
+          <span class="sub-title">Moments Captured</span>
+          <h2>EYIF 2025 Event Gallery</h2>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+      <span class="modal-close" id="modalClose">&times;</span>
+      <div class="modal-prev" id="modalPrev">&#10094;</div>
+      <div class="modal-next" id="modalNext">&#10095;</div>
+      <div class="modal-content">
+        <img id="modalImage" src="" alt="Gallery Image">
+      </div>
+      <div class="modal-counter" id="modalCounter"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="bg bg-pattern-1"></div>
+      <div class="auto-container">
+        <div class="widgets-section">
+          <div class="row">
+            <div class="footer-column col-xl-4 col-lg-4 col-md-12">
+              <div class="footer-widget about-widget">
+                <div class="logo">
+                  <a href="index.html"><img src="images/logo-2.png" alt="Logo" /></a>
+                </div>
+                <div class="text">
+                  Empowering youth through innovation, entrepreneurship, and
+                  civic participation for a transformed future.
+                </div>
+                <ul class="social-icon-two">
+                  <li>
+                    <a href="https://x.com/edoyif?t=G2teLxeB8QG3la5JNJXrLw&s=09"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/edoyif?igsh=M2cwOHh4c295cnpt"><i
+                        class="fab fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer-column col-xl-4 col-lg-4 col-md-6">
+              <div class="footer-widget links-widget">
+                <h4 class="widget-title">Quick Links</h4>
+                <div class="widget-content">
+                  <ul class="user-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="grant-registration.html">Grants</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-column col-xl-4 col-lg-4 col-md-6">
+              <div class="footer-widget contact-widget">
+                <h4 class="widget-title">Contact Info</h4>
+                <div class="widget-content">
+                  <ul class="contact-info">
+                    <li>
+                      <i class="fa fa-map-marker-alt"></i> Victor Uwaifo Creative
+                      Hub, Benin City
+                    </li>
+                    <li>
+                      <i class="fa fa-phone"></i>
+                      <a href="tel:+2348153732506">+234 815 373 2506</a>
+                    </li>
+                    <li>
+                      <i class="fa fa-envelope"></i>
+                      <a href="mailto:info@edoyouthimpactforum.com">info@edoyouthimpactforum.com</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="auto-container">
+          <div class="inner-container">
+            <div class="copyright-text">
+              &copy; 2025 EYIF. All Rights Reserved.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="scroll-to-top scroll-to-target" data-target="html">
+    <span class="fa fa-angle-up"></span>
+  </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.fancybox.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/appear.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/owl.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    const images = [
+      'images/updates/IMG-20250702-WA0089.jpg',
+      'images/updates/IMG-20250703-WA0082.jpg',
+      'images/updates/IMG-20250703-WA0096.jpg',
+      'images/updates/IMG-20250703-WA0109.jpg',
+      'images/updates/IMG-20250703-WA0111.jpg',
+      'images/updates/IMG-20250703-WA0168.jpg',
+      'images/updates/IMG-20250703-WA0170.jpg',
+      'images/updates/IMG-20250703-WA0203.jpg',
+      'images/updates/IMG-20250703-WA0275.jpg',
+      'images/updates/IMG-20250703-WA0295.jpg',
+      'images/updates/IMG-20250703-WA0299.jpg',
+      'images/updates/IMG-20250703-WA0300.jpg',
+      'images/updates/IMG-20250703-WA0354.jpg',
+      'images/updates/IMG-20250703-WA0376.jpg',
+      'images/updates/IMG-20250703-WA0377.jpg',
+      'images/updates/IMG-20250703-WA0390.jpg',
+      'images/updates/IMG-20250703-WA0449.jpg',
+      'images/updates/IMG-20250703-WA0471.jpg',
+      'images/updates/IMG-20250703-WA0473.jpg',
+      'images/updates/IMG-20250703-WA0492.jpg',
+      'images/updates/IMG-20250703-WA0493.jpg',
+      'images/updates/IMG-20250703-WA0496.jpg',
+      'images/updates/IMG-20250703-WA0497.jpg',
+      'images/updates/IMG-20250703-WA0505.jpg',
+      'images/updates/IMG-20250703-WA0512.jpg',
+      'images/updates/IMG-20250703-WA0528.jpg',
+      'images/updates/IMG-20250703-WA0580.jpg'
+    ];
+
+    const galleryGrid = document.getElementById('galleryGrid');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+    const modalPrev = document.getElementById('modalPrev');
+    const modalNext = document.getElementById('modalNext');
+    const modalCounter = document.getElementById('modalCounter');
+
+    let currentImageIndex = 0;
+
+    images.forEach((src, index) => {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.dataset.index = index;
+      item.innerHTML = `<img src="${src}" alt="EYIF Event Photo ${index + 1}" loading="lazy">`;
+      item.addEventListener('click', () => openModal(index));
+      galleryGrid.appendChild(item);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = (parseInt(el.dataset.index) % 4) * 90;
+          el.style.animationDelay = `${delay}ms`;
+          el.classList.add('visible');
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.gallery-item').forEach(item => observer.observe(item));
+
+    function openModal(index) {
+      currentImageIndex = index;
+      updateModalImage();
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function updateModalImage() {
+      modalImage.src = images[currentImageIndex];
+      modalCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+    }
+
+    function showPrevImage() {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      updateModalImage();
+    }
+
+    function showNextImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      updateModalImage();
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalPrev.addEventListener('click', showPrevImage);
+    modalNext.addEventListener('click', showNextImage);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeModal();
+      } else if (e.key === 'ArrowLeft') {
+        showPrevImage();
+      } else if (e.key === 'ArrowRight') {
+        showNextImage();
+      }
+    });
+  </script>
+</body>
+
+</html>
