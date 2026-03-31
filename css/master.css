@@ -15904,7 +15904,7 @@ Scroll To Top style
 .page-title .inner-container .breadcrumb-marquee {
   position: absolute;
   left: 84px;
-  bottom: 10px;
+  bottom: -144px !important;
   display: flex;
   white-space: nowrap;
   gap: 50px;
