@@ -1396,26 +1396,8 @@
           `;
         }
 
-        function submitApplication(event, tier) {
-          event.preventDefault();
-          const form = event.target;
-          const formData = new FormData(form);
-          const data = Object.fromEntries(formData.entries());
-          
-          // Add tier information
-          data.tier = tier;
-          data.timestamp = new Date().toISOString();
-          
-          console.log('Application submitted:', data);
-          
-          // Here you would typically send the data to your backend
-          // For now, we'll show a success message
-          alert('Application submitted successfully! We will review your application and get back to you soon.');
-          
-          // Reset and go back
-          form.reset();
-          goBack();
-        }
+        // submitApplication() is defined in js/form-handler.js
+        // It sends data to /apply/{tier} with proper field mapping
       </script>
 
       <!-- Main Footer -->
@@ -1595,7 +1577,7 @@
     <script src="js/SplitText.min.js"></script>
     <script src="js/script.js"></script>
     <!-- Form Handler -->
-    <!-- <script src="js/form-handler.js"></script> -->
+    <script src="js/form-handler.js"></script>
     <!-- Color Setting -->
     <script src="js/color-settings.js"></script>
   </body>
