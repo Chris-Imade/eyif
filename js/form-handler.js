@@ -34,6 +34,23 @@ function mapEdoConnection(value) {
   return map[value] || value;
 }
 
+function mapEdoConnections(value) {
+  if (Array.isArray(value)) {
+    return value.map(mapEdoConnection);
+  }
+  return value ? [mapEdoConnection(value)] : [];
+}
+
+function assignFormValue(target, key, value) {
+  if (target[key] === undefined) {
+    target[key] = value;
+  } else if (Array.isArray(target[key])) {
+    target[key].push(value);
+  } else {
+    target[key] = [target[key], value];
+  }
+}
+
 // Helper function to convert category values to backend format
 function convertCategoryFormat(category) {
   var categoryMap = {
@@ -473,10 +490,31 @@ var NUMERIC_FIELDS = [
 function submitApplication(event, tier) {
   event.preventDefault();
   var form = event.target;
+
+  var invalidCheckboxGroup = null;
+  var checkboxGroups = form.querySelectorAll("[data-required-checkbox-group]");
+  Array.prototype.some.call(checkboxGroups, function (group) {
+    if (!group.querySelector("input:checked")) {
+      invalidCheckboxGroup = group;
+      return true;
+    }
+    return false;
+  });
+  if (invalidCheckboxGroup) {
+    showFormFeedback(
+      form,
+      "Please select at least one Edo State connection.",
+      "error"
+    );
+    showToast("Please select at least one Edo State connection.", "error");
+    invalidCheckboxGroup.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+
   var formData = new FormData(form);
   var rawData = {};
   formData.forEach(function (value, key) {
-    rawData[key] = value;
+    assignFormValue(rawData, key, value);
   });
 
   // Convert snake_case form field names to camelCase backend keys
@@ -485,9 +523,11 @@ function submitApplication(event, tier) {
     var camelKey = snakeToCamel(key);
     var value = rawData[key];
 
-    // Map edo connection values to match backend enum
+    // Keep the legacy string field while also sending all selected values.
     if (camelKey === "edoConnection") {
-      data[camelKey] = mapEdoConnection(value);
+      var edoConnections = mapEdoConnections(value);
+      data.edoConnection = edoConnections.join(", ");
+      data.edoConnections = edoConnections;
     } else {
       data[camelKey] = value;
     }

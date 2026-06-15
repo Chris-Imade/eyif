@@ -12,7 +12,7 @@ This document outlines the schema for the application forms used in the grant re
 | `email` | email | Yes | |
 | `phone` | tel | Yes | |
 | `age` | number | Yes | Range: 18-35 |
-| `edo_connection` | select | Yes | Options: Resident, Indigene, Business Based |
+| `edo_connection` | checkbox group | Yes | Multi-select. Options: Resident, Indigene, Business Based. Submission sends legacy `edoConnection` as a comma-separated string and full `edoConnections` array. |
 | `business_name` | text | Yes | |
 | `problem` | textarea | Yes | Max 1000 chars |
 | `solution` | textarea | Yes | Max 1000 chars |
@@ -41,7 +41,7 @@ This document outlines the schema for the application forms used in the grant re
 | `email` | email | Yes | |
 | `phone` | tel | Yes | |
 | `age` | number | Yes | 18-35 |
-| `edo_connection` | select | Yes | |
+| `edo_connection` | checkbox group | Yes | Multi-select. Submission sends legacy `edoConnection` as a comma-separated string and full `edoConnections` array. |
 | `startup_name` | text | Yes | |
 | `founded_date` | month | Yes | |
 | `website` | url | No | |
@@ -77,7 +77,7 @@ This document outlines the schema for the application forms used in the grant re
 | `email` | email | Yes | |
 | `phone` | tel | Yes | |
 | `age` | number | Yes | 18-35 |
-| `edo_connection` | select | Yes | |
+| `edo_connection` | checkbox group | Yes | Multi-select. Submission sends legacy `edoConnection` as a comma-separated string and full `edoConnections` array. |
 | `company_name` | text | Yes | |
 | `cac_number` | text | No | |
 | `year_founded` | number | Yes | |

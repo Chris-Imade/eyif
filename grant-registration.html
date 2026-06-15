@@ -369,6 +369,28 @@
         min-height: 120px;
         resize: vertical;
       }
+      .checkbox-group {
+        display: grid;
+        gap: 10px;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background: #fff;
+      }
+      .checkbox-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+      }
+      .checkbox-option input {
+        width: auto;
+        margin: 0;
+        flex: 0 0 auto;
+      }
       .form-group small {
         display: block;
         margin-top: 5px;
@@ -824,6 +846,31 @@
           return forms[tier] || '';
         }
 
+        function getEdoConnectionField() {
+          return `
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Edo State Connection <span class="required">*</span></label>
+                <div class="checkbox-group" data-required-checkbox-group="edo_connection">
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="edo_connection" value="resident">
+                    <span>Edo State Resident</span>
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="edo_connection" value="indigene">
+                    <span>Edo State Indigene</span>
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="edo_connection" value="business_based">
+                    <span>Business Based in Edo</span>
+                  </label>
+                </div>
+                <small>Select all that apply</small>
+              </div>
+            </div>
+          `;
+        }
+
         function getIdeaTrackForm() {
           return `
             <div class="application-form-container active">
@@ -863,17 +910,7 @@
                         <small>Must be between 18-35 years</small>
                       </div>
                     </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Edo State Connection <span class="required">*</span></label>
-                        <select name="edo_connection" required>
-                          <option value="">Select...</option>
-                          <option value="resident">Edo State Resident</option>
-                          <option value="indigene">Edo State Indigene</option>
-                          <option value="business_based">Business Based in Edo</option>
-                        </select>
-                      </div>
-                    </div>
+                    ${getEdoConnectionField()}
                   </div>
                 </div>
 
@@ -1036,17 +1073,7 @@
                         <input type="number" name="age" min="18" max="35" required>
                       </div>
                     </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Edo State Connection <span class="required">*</span></label>
-                        <select name="edo_connection" required>
-                          <option value="">Select...</option>
-                          <option value="resident">Edo State Resident</option>
-                          <option value="indigene">Edo State Indigene</option>
-                          <option value="business_based">Business Based in Edo</option>
-                        </select>
-                      </div>
-                    </div>
+                    ${getEdoConnectionField()}
                   </div>
                 </div>
 
@@ -1226,17 +1253,7 @@
                         <input type="number" name="age" min="18" max="35" required>
                       </div>
                     </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Edo State Connection <span class="required">*</span></label>
-                        <select name="edo_connection" required>
-                          <option value="">Select...</option>
-                          <option value="resident">Edo State Resident</option>
-                          <option value="indigene">Edo State Indigene</option>
-                          <option value="business_based">Business Based in Edo</option>
-                        </select>
-                      </div>
-                    </div>
+                    ${getEdoConnectionField()}
                   </div>
                 </div>
 
