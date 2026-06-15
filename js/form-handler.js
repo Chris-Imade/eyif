@@ -523,10 +523,10 @@ function submitApplication(event, tier) {
     var camelKey = snakeToCamel(key);
     var value = rawData[key];
 
-    // Keep the legacy string field while also sending all selected values.
+    // Keep the legacy enum field while also sending all selected values.
     if (camelKey === "edoConnection") {
       var edoConnections = mapEdoConnections(value);
-      data.edoConnection = edoConnections.join(", ");
+      data.edoConnection = edoConnections[0] || "";
       data.edoConnections = edoConnections;
     } else {
       data[camelKey] = value;
